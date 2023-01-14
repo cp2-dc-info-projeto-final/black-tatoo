@@ -6,13 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Black-Tatoo</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="css/index.css">
 
 </head>
 <body>
-<?php include "header.php" ?>
-<div class="container text-center">
-            <img src="_img/logo.jpeg" alt="Logo CP2">
-        </div>
+    <?php include "header.php" ?>
+    
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col">
+                <img src="img/logo.jpeg" alt="" >
+            </div>
+            <div class="col">
+                <h1 class="col">Bem vindo ao black tatto</h1>
+            </div>
+        <div>
+    </div>
+
+        
 </body>
 </html>

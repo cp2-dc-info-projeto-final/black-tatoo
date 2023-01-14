@@ -8,13 +8,13 @@
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tatuagens</a>
+                    <a class="nav-link" href="servicos.php">Tatuagens</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="servicos.php">Agendamento</a>
+                    <a class="nav-link" href="agendamento.php">Agendamento</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="agendamento.php">Sobre nós</a>
+                    <a class="nav-link" href="#">Sobre nós</a>
                 </li>
 
             </ul>
@@ -22,8 +22,8 @@
             if(empty($_SESSION["email"]) == true){
             echo "<form class='form-inline my-2 my-lg-0'>";
             echo "<div class='.caixa'>";
-                echo "<a href='login.php'>Login</a>";
-                echo "<a href='Formulario.php'>Cadastre-se</a>";
+                echo "<a href='login.php' class='btn btn-outline-primary'>Login</a>";
+                echo "<a href='Formulario.php' class='btn btn-outline-success'>Cadastre-se</a>";
             echo "</div>";
                 echo "</form>";
             } ?>
