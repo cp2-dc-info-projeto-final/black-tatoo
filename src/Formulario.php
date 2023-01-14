@@ -16,6 +16,11 @@
                 <legend><b>Fórmulário de Clientes</b></legend>
                 <br>
                 <div class="inputBox">
+                    <input type="text" name="usuario" id="nome" class="inputUser" required>
+                    <label for="nome" class="labelInput">Apelido</label>
+                </div>
+                <br>
+                <div class="inputBox">
                     <input type="text" name="nome" id="nome" class="inputUser" required>
                     <label for="nome" class="labelInput">Nome completo</label>
                 </div>
