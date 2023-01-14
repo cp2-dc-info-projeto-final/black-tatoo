@@ -23,6 +23,9 @@ SET time_zone = "+00:00";
 CREATE DATABASE IF NOT EXISTS `blacktatoo` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `blacktatoo`;
 
+CREATE USER IF NOT EXISTS 'tatoo'@'localhost' IDENTIFIED BY '123';
+GRANT ALL PRIVILEGES ON blacktatoo.* TO 'tatoo'@'localhost';
+
 -- --------------------------------------------------------
 
 --
