@@ -12,6 +12,7 @@
     <div class="box">
         <form action="pagina_extra.php" method="POST">
         <input type="hidden" name="operacao" value="inserir">
+        <input type="hidden" name="permissao" value="0">
             <fieldset>
                 <legend><b>Fórmulário de Clientes</b></legend>
                 <br>

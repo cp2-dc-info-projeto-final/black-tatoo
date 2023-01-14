@@ -18,11 +18,13 @@
     $operacao = $_REQUEST["operacao"];
 
     if($operacao == "inserir"){
+        $usuario = $_POST["usuario"]; 
         $nome = $_POST["nome"]; 
         $email = $_POST["email"];
         $senha = $_POST["senha"];
         $senha_rep = $_POST["senha_rep"];
         $data_nasc = $_POST["data_nascimento"];
+        $permissao = $_POST["permissao"]; 
         $erro = 0;
 
         
@@ -64,9 +66,8 @@
         
         if($erro == 0){
             $senha_cript = password_hash($senha, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO cliente (nome,email,senha,data_nasc)";
-            $sql .= "VALUES ('$nome','$email','$senha_cript','$data_nasc');";  
-            
+            $sql = "INSERT INTO cliente (Usuario,nome,email,senha,data_nasc,permissao)";
+            $sql .= "VALUES ('$usuario','$nome','$email','$senha_cript','$data_nasc','$permissao');";
 
           if (!  mysqli_query($mysqli,$sql) ){
             echo mysqli_error($mysqli);
@@ -76,9 +77,7 @@
             echo "E-mail: $email <br>";
             echo "Data de nascimento: $data_nasc <br>";
             include "envia_email.php";
-            envia_email($email, "Criação de Usuário","Bem vindo a BLACK TATOO STUDIO, $nome");
-            
-            header ("refresh:5;location:cliente.php");
+            envia_email($email, "Criação de Usuário","Bem vindo a BLACK TATOO STUDIO, $nome");            
         }
     }
     else if($operacao == "exibir"){
