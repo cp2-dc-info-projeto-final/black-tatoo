@@ -20,6 +20,7 @@
             session_start();
             $_SESSION["email"] = $email;
             $_SESSION["senha"] = $senha;
+            $_SESSION["permissao"] = 1;
             // direciona para a página inicial
             header("Location: perfil.php");
         }
@@ -42,6 +43,7 @@
             session_start();
             $_SESSION["email"] = $email;
             $_SESSION["senha"] = $senha;
+            $_SESSION["permissao"] = 2;
             // direciona para a página inicial
             header("Location: perfil.php");
         }        
@@ -66,6 +68,7 @@
             session_start();
             $_SESSION["email"] = $email;
             $_SESSION["senha"] = $senha;
+            $_SESSION["permissao"] = 0;
             // direciona para a página inicial
             header("Location: perfil.php");
         }
