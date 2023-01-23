@@ -21,7 +21,7 @@
             $_SESSION["email"] = $email;
             $_SESSION["senha"] = $senha;
             // direciona para a página inicial
-            header("Location: blacktatoo.php");
+            header("Location: perfil.php");
         }
     }
     else{
@@ -43,7 +43,7 @@
             $_SESSION["email"] = $email;
             $_SESSION["senha"] = $senha;
             // direciona para a página inicial
-            header("Location: blacktatoo.php");
+            header("Location: perfil.php");
         }        
     }
     else{
@@ -67,7 +67,7 @@
             $_SESSION["email"] = $email;
             $_SESSION["senha"] = $senha;
             // direciona para a página inicial
-            header("Location: blacktatoo.php");
+            header("Location: perfil.php");
         }
     }
     else{

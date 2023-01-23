@@ -90,7 +90,7 @@
             $_SESSION["email"] = $email;
             $_SESSION["senha"] = $senha;
             // direciona para a página inicial
-            header ("location: cliente.php");
+            header ("location: perfil.php");
         }
         mysqli_close($mysqli);
     }
