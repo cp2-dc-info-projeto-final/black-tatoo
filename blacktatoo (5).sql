@@ -34,20 +34,20 @@ GRANT ALL PRIVILEGES ON blacktatoo.* TO 'tatoo'@'localhost';
 
 DROP TABLE IF EXISTS `administrador`;
 CREATE TABLE IF NOT EXISTS `administrador` (
-  `nome` int(50) NOT NULL,
-  `senha` int(255) NOT NULL,
-  `email` int(50) NOT NULL,
-  `data_nasc` int(11) NOT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cod_admin` int (50) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `data_nasc` varchar(11) NOT NULL,
   `permissao` int(50) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`cod_admin`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Despejando dados para a tabela `administrador`
 --
 
-INSERT INTO `administrador` (`nome`, `senha`, `email`, `data_nasc`, `id`, `permissao`) VALUES
+INSERT INTO `administrador` (`cod_admin`, `nome`, `senha`, `email`, `data_nasc`, `permissao`) VALUES
 (0, 0, 0, 21, 1, 0);
 
 -- --------------------------------------------------------
@@ -59,7 +59,7 @@ INSERT INTO `administrador` (`nome`, `senha`, `email`, `data_nasc`, `id`, `permi
 DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE IF NOT EXISTS `cliente` (
   `cod_cliente` int(11) NOT NULL AUTO_INCREMENT,
-  `Usuario` varchar(50) NOT NULL,
+  `usuario` varchar(50) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `data_nasc` varchar(11) NOT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
 -- Despejando dados para a tabela `cliente`
 --
 
-INSERT INTO `cliente` (`cod_cliente`, `Usuario`, `nome`, `email`, `data_nasc`, `senha`, `permissao`) VALUES
+INSERT INTO `cliente` (`cod_cliente`, `usuario`, `nome`, `email`, `data_nasc`, `senha`, `permissao`) VALUES
 (1, '', 'yago a', 'mimsay003@gmail.com', '2003-10-21', '$2y$10$BF9fPLBwNQaTC4Ab5hm5l.DRTkQ0ZfB0s8TqeLMOsnV4d4fdNuyjK', 0);
 
 -- --------------------------------------------------------
@@ -83,15 +83,15 @@ INSERT INTO `cliente` (`cod_cliente`, `Usuario`, `nome`, `email`, `data_nasc`, `
 
 DROP TABLE IF EXISTS `funcionario`;
 CREATE TABLE IF NOT EXISTS `funcionario` (
-  `nome` int(50) NOT NULL,
+  `cod_func` int (50) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) NOT NULL,
   `senha` varchar(255) NOT NULL,
   `email` varchar(50) NOT NULL,
   `data_nasc` varchar(10) NOT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cpf` varchar(16) NOT NULL,
-  `tel` varchar(15) NOT NULL,
+  `cpf` int(16) NOT NULL,
+  `tel` int(15) NOT NULL,
   `permissao` int(50) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`cod_func`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 COMMIT;
 
