@@ -47,8 +47,8 @@ CREATE TABLE IF NOT EXISTS `administrador` (
 -- Despejando dados para a tabela `administrador`
 --
 
-INSERT INTO `administrador` (`cod_admin`, `nome`, `senha`, `email`, `data_nasc`, `permissao`) VALUES
-(0, 0, 0, 21, 1, 0);
+INSERT INTO `administrador` (`cod_admin`, `nome`, `senha`, `email`, `data_nasc`, `permissao`) VALUES 
+('1', 'black_adm', '$2y$10$wrmriMXv8TlN4k/FF3hVu.Ylz8H9navNly.n7gYFghs4Yr7IwEvRG', 'blacktatto@gmail.com', '01-01-2022', '1');
 
 -- --------------------------------------------------------
 

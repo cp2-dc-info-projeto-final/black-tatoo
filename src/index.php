@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row align-items-start">
             <div class="col">
-                <img src="img/logo.jpeg" alt="" >
+                <img src="img/tatto.png" alt="" >
             </div>
             <div class="col">
                 <h1 class="col">Bem vindo ao black tatto</h1>

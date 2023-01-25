@@ -14,6 +14,7 @@
         if(!password_verify($senha, $adminnistrador['senha'])){
             echo "Senha de adiministrador não encontrada!";
             echo "<p><a href='login.php'>Página de login</a></p>";
+        exit;
         }
         else{
             // Abre a sessão e registra as variáveis do login
@@ -41,6 +42,7 @@
         if(!password_verify($senha, $funcionario['senha'])){
             echo "Senha de funcionario não encontrada!";
             echo "<p><a href='login.php'>Página de login</a></p>";
+        exit;
         }
         else{
             // Abre a sessão e registra as variáveis do login
@@ -70,6 +72,7 @@
         {
             echo "Senha do cliente não encontrada!";
             echo "<p><a href='login.php'>Página de login</a></p>";
+        exit;
         }
         else{
             // Abre a sessão e registra as variáveis do login

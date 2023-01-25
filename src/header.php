@@ -14,7 +14,10 @@
                     <a class="nav-link" href="agendamento.php">Agendamento</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sobre nós</a>
+                    <a class="nav-link" href="sobrenos.php">Sobre nós</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="form_fun.php">Trabalhe conosco</a>
                 </li>
 
             </ul>

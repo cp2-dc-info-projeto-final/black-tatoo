@@ -10,6 +10,21 @@
 
 </head>
 <body>
-    <?php include "header.php" ?>
+    <?php include "header.php";
+    include "conexao.php";
+    $sql ="SELECT * FROM cliente;";
+    $res = mysqli_query($mysqli,$sql);
+    $linhas = mysqli_num_rows($res);
+    echo "<table><th>clientes</th>";
+    for ($i = 0; $i < $linhas; $i++) {
+        $usuario = mysqli_fetch_array($res);
+
+        echo "<Username: " . $usuario["usuario"] . "<br>";
+        echo "Nome: " . $usuario["nome"] . "<br>";
+        echo "Idade: " . $usuario["data_nasc"] . "<br>";
+        echo "Email: " . $usuario["email"] . "<br>";
+        echo "---------------------------------<br>";
+    }
+    ?>
 </body>
 </html>
