@@ -18,9 +18,13 @@
         else{
             // Abre a sessão e registra as variáveis do login
             session_start();
+            $nome = $adminnistrador['nome'];
+            $codigo = $adminnistrador['cod_admin'];
+            $_SESSION["codigo"] = $codigo;
+            $_SESSION["nome"] = $nome;
             $_SESSION["email"] = $email;
             $_SESSION["senha"] = $senha;
-            $_SESSION["permissao"] = 1;
+            $_SESSION["permissao"] = $adminnistrador['permissao'];
             // direciona para a página inicial
             header("Location: perfil.php");
         }
@@ -41,9 +45,13 @@
         else{
             // Abre a sessão e registra as variáveis do login
             session_start();
+            $nome = $funcionario['nome'];
+            $codigo = $funcionario['cod_func'];
+            $_SESSION["codigo"] = $codigo;
+            $_SESSION["nome"] = $nome;
             $_SESSION["email"] = $email;
             $_SESSION["senha"] = $senha;
-            $_SESSION["permissao"] = 2;
+            $_SESSION["permissao"] = $funcionario['permissao'];
             // direciona para a página inicial
             header("Location: perfil.php");
         }        
@@ -66,9 +74,13 @@
         else{
             // Abre a sessão e registra as variáveis do login
             session_start();
+            $nome = $cliente['usuario'];
+            $codigo = $cliente['cod_cliente'];
+            $_SESSION["codigo"] = $codigo;
+            $_SESSION["nome"] = $nome;
             $_SESSION["email"] = $email;
             $_SESSION["senha"] = $senha;
-            $_SESSION["permissao"] = 0;
+            $_SESSION["permissao"] = $cliente['permissao'];
             // direciona para a página inicial
             header("Location: perfil.php");
         }

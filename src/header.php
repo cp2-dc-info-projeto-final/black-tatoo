@@ -20,14 +20,12 @@
             </ul>
         <?php    
             if (session_status() === PHP_SESSION_NONE){
-                if(empty($_SESSION["email"]) == true){
             echo "<form class='form-inline my-2 my-lg-0'>";
             echo "<div class='.caixa'>";
                 echo "<a href='login.php' class='btn btn-outline-primary'>Login</a>";
                 echo "<a href='Formulario.php' class='btn btn-outline-success'>Cadastre-se</a>";
             echo "</div>";
                 echo "</form>";
-            }
         }
             else{echo "<a class='navbar-brand' href='perfil.php'>perfil</a>"; } ?>
         </div>
