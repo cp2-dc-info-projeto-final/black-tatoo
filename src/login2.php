@@ -50,9 +50,12 @@
             $nome = $funcionario['nome'];
             $codigo = $funcionario['cod_func'];
             $_SESSION["codigo"] = $codigo;
+            $_SESSION["apelido"] = $apelido;
             $_SESSION["nome"] = $nome;
-            $_SESSION["email"] = $email;
             $_SESSION["senha"] = $senha;
+            $_SESSION["cpf"] = $cpf;
+            $_SESSION["telefone"] = $telefone;
+            $_SESSION["email"] = $email;
             $_SESSION["permissao"] = $funcionario['permissao'];
             // direciona para a página inicial
             header("Location: perfil.php");
