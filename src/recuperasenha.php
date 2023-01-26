@@ -9,7 +9,7 @@
 <body>
 <div>
         <h1>Recuperar Senha</h1>
-        <form action="login2.php" method="POST">
+        <form action="recuperasenha.php" method="POST">
             <input type="text" name="email" placeholder="Email">
             <br><br>
             <input class="inputSubmit" type="submit" name="submit" value="Enviar">
@@ -23,6 +23,9 @@ include "conexao.php";
 include "gerars.php";
 
 if(isset($_POST["email"])){
+
+echo"Entrei no if";
+
 $email = $_POST["email"];
 $senha = gerar_senha(10, true, true, false);
 $hash = password_hash($senha, PASSWORD_DEFAULT);
