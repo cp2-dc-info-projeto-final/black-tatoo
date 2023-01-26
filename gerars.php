@@ -15,9 +15,8 @@ if ($numeros){
 }
 if ($simbolos){
     $senha .=str_shuffle($sim);
-    $senha_cript = password_hash($senha, PASSWORD_DEFAULT);
-
 }
+$senha_cript = password_hash($senha, PASSWORD_DEFAULT);
 return substr(str_shuffle($senha_cript), 0, $tamanho);
 
 }
