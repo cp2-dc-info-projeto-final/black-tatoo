@@ -1,6 +1,6 @@
 body {
     height: 900px;
-    background-color: rgb(35, 30, 5);
+    background-color: rgb(21, 19, 9);
     background-image: linear-gradient(rgba(255, 0, 0, 0), black 40%, gray 60%);
     font-family: "Stoke", "verdana", "liberation";
     color: rgb(68, 59, 8);
@@ -28,6 +28,10 @@ body {
     padding: 15px;
     border-radius: 15px;
     width: 25%;
+}
+
+.col {
+    padding-left: 30%;
 }
 
 .caixa {
