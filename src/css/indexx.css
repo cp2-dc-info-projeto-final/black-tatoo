@@ -1,11 +1,13 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(67, 67, 67);
-    color: white;
+    height: 900px;
+    background-color: rgb(35, 30, 5);
+    background-image: linear-gradient(rgba(255, 0, 0, 0), black 40%, gray 60%);
+    font-family: "Stoke", "verdana", "liberation";
+    color: rgb(68, 59, 8);
 }
 
 .box {
-    color: rgb(24, 23, 23);
+    color: rgb(68, 59, 8);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -14,6 +16,18 @@ body {
     padding: 15px;
     border-radius: 15px;
     width: 20%;
+}
+
+.tm {
+    color: rgb(24, 23, 23);
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: WHITE;
+    padding: 15px;
+    border-radius: 15px;
+    width: 25%;
 }
 
 .caixa {
