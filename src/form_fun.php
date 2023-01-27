@@ -11,7 +11,7 @@
     <a href="index.php" class="btm">Voltar</a>
     <div class="box">
         <form action="pagina_extra.php" method="POST">
-        <input type="hidden" name="operacao" value="inserir">
+        <input type="hidden" name="operacao" value="inserir_funcionario">
         <input type="hidden" name="permissao" value="0">
             <fieldset>
                 <legend><b>Fórmulário de Funcionário</b></legend>
