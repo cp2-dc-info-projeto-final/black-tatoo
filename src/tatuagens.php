@@ -1,35 +1,32 @@
-<?php
-    include "header.php";
-    ?>
-
-
 <html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
-
-<style>
-    .img {
-        display: none
-    }
-    
-    .w3-left,
-    .w3-right,
-    .w3-badge {
-        cursor: pointer;
-        background-color: black;
-    }
-    
-    .w3-badge {
-        height: 13px;
-        width: 13px;
-        padding: 0;
-    }
-</style>
-
-
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/indexx.css">
+        <style>
+            .img {
+                display: none
+            }
+            
+            .w3-left,
+            .w3-right,
+            .w3-badge {
+                cursor: pointer;
+                background-color: black;
+            }
+            
+            .w3-badge {
+                height: 13px;
+                width: 13px;
+                padding: 0;
+            }
+        </style>
+    </head>
 <body>
+<?php include "header.php"; ?>
 
     <!-- Slide Show -->
     <div class="w3-content w3-display-container" style="max-width:70%">

@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="servicos.php">Tatuagens</a>
+                    <a class="nav-link" href="tatuagens.php">Tatuagens</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="agendamento.php">Agendamento</a>
