@@ -160,8 +160,135 @@
             echo '<script type ="text/JavaScript">';  
             echo 'alert("Serviço cadastrado com sucesso")';  
             echo '</script>';
+        } else if ($operacao == "inserir_funcionario") {
+    $apelido = $_POST["apelido"];
+    $nome = $_POST["nome"];
+    $senha = $_POST["senha"];
+    $senha_rep = $_POST["senha_rep"];
+    $cpf = $_POST["CPF"];
+    $telefone = $_POST["Telefone"];
+    $permissao = $_POST["permissao"];
+    $email = $_POST["email"];
+    $data_nasc = $_POST["data_nascimento"];
+    $erro = 0; {
+
+        if (empty($nome) or strstr($nome, ' ') == false) {
+            echo "Por favor, preencha o nome completo.<br>";
+            $erro = 1;
         }
-    
+
+        if (strlen($email) < 10 or strstr($email, '@') == false) {
+            echo "Por favor, preencha o e-mail corretamente.<br>";
+            $erro = 1;
+        }
+
+        $sql = "SELECT * FROM funcionario WHERE email = '$email';";
+        $res = mysqli_query($mysqli, $sql);
+
+        //testa se já existe o e-mail cadastrado
+        if (mysqli_num_rows($res) == 1) {
+            echo "E-mail já cadastrado. Por favor, digite outro e-mail.<br>";
+            $erro = 1;
+        }
+
+        if (strlen($senha) < 5 or strlen($senha) > 10) {
+            echo "Por favor, digite a senha entre 5 e 10 caracteres.<br>";
+            $erro = 1;
+        }
+
+        if ($senha != $senha_rep) {
+            echo "Por favor, repita a senha corretamente.<br>";
+            $erro = 1;
+        }
+
+
+        if (strlen($cpf) < 11) {
+            echo "Por favor, digite o cpf corretamente.<br>";
+            $erro = 1;
+        }
+
+        if (empty($data_nasc)) {
+            echo "Por favor, preencha a data.<br>";
+            $erro = 1;
+        }
+
+        if ($erro == 0) {
+            $senha_cript = password_hash($senha, PASSWORD_DEFAULT);
+            $sql = "INSERT INTO funcionario (apelido,nome,senha, cpf, telefone, email, data_nasc,permissao)";
+            $sql .= "VALUES ('$apelido','$nome','$senha_cript', '$cpf', '$telefone', '$email' '$data_nasc','$permissao');";
+
+            if (!mysqli_query($mysqli, $sql)) {
+                echo mysqli_error($mysqli);
+            }
+
+            echo "Nome: $nome <br>";
+            echo "E-mail: $email <br>";
+            echo "Data de nascimento: $data_nasc <br>";
+            echo "Telefone: $telefone <br>";
+            include "envia_email.php";
+            envia_email($email, "Criação de Usuário", "Bem vindo a BLACK TATOO STUDIO, $nome");
+        }
+
+    }
+
+
+    if (empty($nome) or strstr($nome, ' ') == false) {
+        echo "Por favor, preencha o nome completo.<br>";
+        $erro = 1;
+    }
+
+    if (strlen($email) < 10 or strstr($email, '@') == false) {
+        echo "Por favor, preencha o e-mail corretamente.<br>";
+        $erro = 1;
+    }
+
+    $sql = "SELECT * FROM funcionario WHERE email = '$email';";
+    $res = mysqli_query($mysqli, $sql);
+
+    //testa se já existe o e-mail cadastrado
+    if (mysqli_num_rows($res) == 1) {
+        echo "E-mail já cadastrado. Por favor, digite outro e-mail.<br>";
+        $erro = 1;
+    }
+
+    if (strlen($senha) < 5 or strlen($senha) > 10) {
+        echo "Por favor, digite a senha entre 5 e 10 caracteres.<br>";
+        $erro = 1;
+    }
+
+    if ($senha != $senha_rep) {
+        echo "Por favor, repita a senha corretamente.<br>";
+        $erro = 1;
+    }
+
+
+    if (strlen($cpf) < 11) {
+        echo "Por favor, digite o cpf corretamente.<br>";
+        $erro = 1;
+    }
+
+    if (empty($data_nasc)) {
+        echo "Por favor, preencha a data.<br>";
+        $erro = 1;
+    }
+
+
+    if ($erro == 0) {
+        $senha_cript = password_hash($senha, PASSWORD_DEFAULT);
+        $sql = "INSERT INTO funcionario (apelido,nome,senha, senha_cript, cpf, telefone, email, data_nasc,permissao)";
+        $sql .= "VALUES ('$apelido','$nome','$senha','$senha_cript', '$cpf', '$telefone', '$email' '$data_nasc','$permissao');";
+
+        if (!mysqli_query($mysqli, $sql)) {
+            echo mysqli_error($mysqli);
+        }
+
+        echo "Nome: $nome <br>";
+        echo "E-mail: $email <br>";
+        echo "Data de nascimento: $data_nasc <br>";
+        echo "Telefone: $telefone <br>";
+     
+    }
+}
 ?>
     </body>
 </html>
