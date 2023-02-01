@@ -17,8 +17,8 @@
                 <legend><b>Fórmulário de Funcionário</b></legend>
                 <br>
                 <div class="inputBox">
-                    <input type="text" name="usuario" id="nome" class="inputUser" required>
-                    <label for="nome" class="labelInput">Apelido</label>
+                    <input type="text" name="apelido" id="apelido" class="inputUser" required>
+                    <label for="apelido" class="labelInput">Apelido</label>
                 </div>
                 <br>
                 <div class="inputBox">
