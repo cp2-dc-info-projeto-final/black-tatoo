@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/indexx.css">
-    <title>blacktatoo</title>
+    <title>Blacktatoo</title>
 </head>
 <body>
     <a href="index.php" class="btm">Voltar</a>
