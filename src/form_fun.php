@@ -12,7 +12,7 @@
     <div class="box">
         <form action="pagina_extra.php" method="POST">
         <input type="hidden" name="operacao" value="inserir_funcionario">
-        <input type="hidden" name="permissao" value="0">
+        <input type="hidden" name="permissao" value="2">
             <fieldset>
                 <legend><b>Fórmulário de Funcionário</b></legend>
                 <br>
