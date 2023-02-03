@@ -6,42 +6,24 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/indexx.css">
-        <style>
-            .img {
-                display: none
-            }
-            
-            .w3-left,
-            .w3-right,
-            .w3-badge {
-                cursor: pointer;
-                background-color: black;
-            }
-            
-            .w3-badge {
-                height: 13px;
-                width: 13px;
-                padding: 0;
-            }
-        </style>
     </head>
 <body>
 <?php include "header.php"; ?>
 
     <!-- Slide Show -->
     <div class="w3-content w3-display-container" style="max-width:70%">
-        <center> <img class="img" src="img/slide1.jpg" style="width:70%"> </center>
-        <center> <img class="img" src="img/slide2.jpg" style="width:50%"> </center>
-        <center> <img class="img" src="img/slide3.jpg" style="width:50%"> </center>
-        <center> <img class="img" src="img/imagem1.jpg" style="width:50%"> </center>
-        <center> <img class="img" src="img/imagem2.jpg" style="width:50%"> </center>
-        <center> <img class="img" src="img/imagem3.jpg" style="width:50%"> </center>
-        <center> <img class="img" src="img/imagem4.jpg" style="width:50%"> </center>
-        <center> <img class="img" src="img/imagem5.jpg" style="width:50%"> </center>
-        <center> <img class="img" src="img/imagem6.jpg" style="width:50%"> </center>
-        <center> <img class="img" src="img/imagem7.jpg" style="width:50%"> </center>
-        <center> <img class="img" src="img/imagem8.jpg" style="width:50%"> </center>
-        <center> <img class="img" src="img/imagem9.jpg" style="width:50%"> </center>
+        <center> <img class="img" src="img/slide1.jpg"> </center>
+        <center> <img class="img" src="img/slide2.jpg"> </center>
+        <center> <img class="img" src="img/slide3.jpg"> </center>
+        <center> <img class="img" src="img/imagem1.jpg"> </center>
+        <center> <img class="img" src="img/imagem2.jpg"> </center>
+        <center> <img class="img" src="img/imagem3.jpg"> </center>
+        <center> <img class="img" src="img/imagem4.jpg"> </center>
+        <center> <img class="img" src="img/imagem5.jpg"> </center>
+        <center> <img class="img" src="img/imagem6.jpg"> </center>
+        <center> <img class="img" src="img/imagem7.jpg"> </center>
+        <center> <img class="img" src="img/imagem8.jpg"> </center>
+        <center> <img class="img" src="img/imagem9.jpg"> </center>
         <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
             <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(1)">&#10094;</div>
             <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
