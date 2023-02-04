@@ -96,6 +96,12 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 COMMIT;
 
+--
+-- Despejando dados para a tabela `funcionario`
+--
+
+INSERT INTO `funcionario` (`cod_func`, `apelido`, `nome`, `senha`, `cpf`, `tel`, `email`, `data_nasc`, `permissao`) VALUES (NULL, 'black', 'black funcionario', '$2y$10$tVEJ6ZKMUaDP.O3vHW5yOuS8tsoGuUZnMqPrw5T7z4374oHeDh3s6', '14525636510', '(21) 9 9911-227', 'blackfunc@gmail.com', '2023-02-01', '2')
+
 -- --------------------------------------------------------
 
 --
@@ -124,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `tatuagem` (
 `estilo` varchar (50) NOT NULL,
 `preco` varchar (50) NOT NULL,
 `autor` varchar (50) NOT NULL,
-`link` varchar (120) NOT NULL,
+`link` varchar (50) NOT NULL,
 `cod_func` int (50) NOT NULL,
 PRIMARY KEY (`cod_tatto`)
 ) 
