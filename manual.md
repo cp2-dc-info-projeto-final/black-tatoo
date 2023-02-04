@@ -14,7 +14,7 @@ satisfatório e principalmente confortável!
  - [Tatuagens](#Funcionalidade-Z)
  - [Agendamento](#Funcionalidade-Z)
  - [Trabalhe conosco](#Funcionalidade-Z)
- - [](#Funcionalidade-Z)
+ - [Perfil](#Funcionalidade-Z)
  - [](#Funcionalidade-Z)
 
 
