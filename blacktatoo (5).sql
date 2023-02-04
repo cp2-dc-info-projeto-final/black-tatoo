@@ -111,7 +111,21 @@ CREATE TABLE IF NOT EXISTS `agendamento` (
   PRIMARY KEY (`cod_agendamento`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 COMMIT;
+-- --------------------------------------------------------
 
+--
+-- Estrutura para tabela `tatuagem`
+--
+
+CREATE TABLE IF NOT EXISTS `tatuagem` (
+`cod_tatto` int (50) AUTO_INCREMENT,
+`estilo` varchar (50) NOT NULL,
+`preco` varchar (50) NOT NULL,
+`autor` varchar (50) NOT NULL,
+`link` varchar (50) NOT NULL,
+`cod_func` int (50) NOT NULL,
+PRIMARY KEY (`cod_tatto`)
+) 
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
