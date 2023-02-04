@@ -19,7 +19,10 @@
     </style>
 </head>
 <body>
-<?php include "header.php";
+<?php include "header.php";?>
+<div class="container">
+    <div class="item">
+<?php
     echo '<br><br><br><center><h1>Olá, Usuario</h1>';
     echo '<h3>Usuario: '.$_SESSION["nome"].'</h3><br>';
     echo '<a href="editar.php" class="btm">Editar dados</a>';
@@ -27,6 +30,11 @@
 if ($_SESSION['permissao'] == 1) {
     echo '<center><br><br><a class="btm" href="lista.php">Listar usuarios</a></center>';
 }
+if ($_SESSION['permissao'] == 2) {
+    echo '<center><br><br><a class="btm" href="addtatto.php">Adicionar tatuagens</a></center>';
+}
     ?>
+    </div>
+</div>
 </body>
 </html>

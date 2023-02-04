@@ -96,6 +96,12 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 COMMIT;
 
+--
+-- Despejando dados para a tabela `funcionario`
+--
+
+INSERT INTO `funcionario` (`cod_func`, `apelido`, `nome`, `senha`, `cpf`, `tel`, `email`, `data_nasc`, `permissao`) VALUES (NULL, 'mestre', 'black_funcionario', '456789123$2y$10$wrmriMXv8TlN4k/FF3hVu.Ylz8H9navNly.n7gYFghs4Yr7IwEvRG', '14525636510', '21991122798', 'blackfunc@gmail.com', '01-01-2022', '2')
+
 -- --------------------------------------------------------
 
 --

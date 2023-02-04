@@ -108,7 +108,24 @@
             echo "Data de nascimento: ".$cliente["data_nasc"]."<br>";
             echo "---------------------<br>";
         }
-    } else if ($operacao == "editar") {
+    }
+    elseif($operacao == "adicionar_tatto"){
+        $preco = $_POST["preco"];
+        $estilo = $_POST["tatuagem"];
+        $nome = $_POST["nome"];
+        $codfun = $_POST["codfun"];
+        $estilop = $_POST["estilo"];
+        $link = $_POST["link"];
+        if (!empty($estilop)){
+            $estilo = $estilop;
+        }
+        $sql = "INSERT INTO tatuagem (estilo,preco,autor,link,cod_func)";
+        $sql .= "VALUES ('$estilo','$preco','$nome','$link','$codfun');";
+        mysqli_query($mysqli,$sql);
+        echo "Tatuagem registrada!";
+        echo "<a href='perfil.php'></a>";
+    }
+    else if ($operacao == "editar") {
 
         $permiss = $_POST["permissao"];
         if ($permiss > 2) {

@@ -19,7 +19,9 @@
   </style>
   </head>
   <body> 
-    <?php include "header.php"; ?>
+    <?php 
+    include "autentica.php";
+    include "header.php";?>
       <h1 class="text-center">Agendamento</h1>
       <br>  
       <br>
