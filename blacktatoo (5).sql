@@ -100,7 +100,7 @@ COMMIT;
 -- Despejando dados para a tabela `funcionario`
 --
 
-INSERT INTO `funcionario` (`cod_func`, `apelido`, `nome`, `senha`, `cpf`, `tel`, `email`, `data_nasc`, `permissao`) VALUES (NULL, 'black', 'black funcionario', '$2y$10$tVEJ6ZKMUaDP.O3vHW5yOuS8tsoGuUZnMqPrw5T7z4374oHeDh3s6', '14525636510', '(21) 9 9911-227', 'blackfunc@gmail.com', '2023-02-01', '2')
+INSERT INTO `funcionario` (`cod_func`, `apelido`, `nome`, `senha`, `cpf`, `tel`, `email`, `data_nasc`, `permissao`) VALUES (2, 'black', 'black funcionario', '$2y$10$tVEJ6ZKMUaDP.O3vHW5yOuS8tsoGuUZnMqPrw5T7z4374oHeDh3s6', '14525636510', '(21) 9 9911-227', 'blackfunc@gmail.com', '2023-02-01', '2')
 
 -- --------------------------------------------------------
 
