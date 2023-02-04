@@ -31,7 +31,7 @@ Ele poderá clicar na opção de sua preferência
 
 
 ## Cadastro 
-Ao clicar em “CADASTRE-SE” o usuário será direcionado para a página de cadastro
+Ao clicar em “PERFIL” o usuário será direcionado para a página de cadastro e login
 onde ele poderá se cadastrar utilizando apelido, nome completo,senha,repetir senha, email e data de nascimento.
 Ele poderá clicar em "ENVIAR" para confirmar cadastro.
 O cliente poderá voltar utilizando o botão "VOLTAR" que estará localizado no canto superior esquerdo.
@@ -40,7 +40,7 @@ O cliente poderá voltar utilizando o botão "VOLTAR" que estará localizado no 
 
 
 ## Login
-Ao clicar em “LOGIN” o usuário será direcionado para a página de login 
+Ao clicar em “PERFIL” o usuário será direcionado para a página de cadastro e login 
 onde ele poderá fazer login com sua conta existente, utilizando email e senha
 Ele poderá clicar em "ENVIAR" para confirmar login.
 O cliente poderá voltar utilizando o botão "VOLTAR" que estará localizado no canto superior esquerdo.
