@@ -128,7 +128,7 @@ CREATE TABLE IF NOT EXISTS `tatuagem` (
 `estilo` varchar (50) NOT NULL,
 `preco` varchar (50) NOT NULL,
 `autor` varchar (50) NOT NULL,
-`link` varchar (50) NOT NULL,
+`link` varchar (150) NOT NULL,
 `cod_func` int (50) NOT NULL,
 PRIMARY KEY (`cod_tatto`)
 ) 
