@@ -96,12 +96,6 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 COMMIT;
 
---
--- Despejando dados para a tabela `funcionario`
---
-
-INSERT INTO `funcionario` (`cod_func`, `apelido`, `nome`, `senha`, `cpf`, `tel`, `email`, `data_nasc`, `permissao`) VALUES (NULL, 'black', 'black funcionario', '$2y$10$tVEJ6ZKMUaDP.O3vHW5yOuS8tsoGuUZnMqPrw5T7z4374oHeDh3s6', '14525636510', '(21) 9 9911-227', 'blackfunc@gmail.com', '2023-02-01', '2')
-
 -- --------------------------------------------------------
 
 --
@@ -110,10 +104,12 @@ INSERT INTO `funcionario` (`cod_func`, `apelido`, `nome`, `senha`, `cpf`, `tel`,
 DROP TABLE IF EXISTS `agendamento`;
 CREATE TABLE IF NOT EXISTS `agendamento` (
   `cod_agendamento` int (50) AUTO_INCREMENT,
-  `nome` varchar (50) NOT NULL,
-  `telefone` varchar(50) NOT NULL,
-  `funcionario` varchar(50) NOT NULL,
-  `horario` varchar(10) NOT NULL,
+  `autor` varchar (50) NOT NULL,
+  `contato` varchar(50) NOT NULL,
+  `cod_fun` varchar(50) NOT NULL,
+  `data` varchar(10) NOT NULL,
+  `estilo_valor` varchar(30) NOT NULL,
+  `cod_cliente` varchar(10) NOT NULL,
   PRIMARY KEY (`cod_agendamento`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 COMMIT;
@@ -128,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `tatuagem` (
 `estilo` varchar (50) NOT NULL,
 `preco` varchar (50) NOT NULL,
 `autor` varchar (50) NOT NULL,
-`link` varchar (50) NOT NULL,
+`link` varchar (120) NOT NULL,
 `cod_func` int (50) NOT NULL,
 PRIMARY KEY (`cod_tatto`)
 ) 

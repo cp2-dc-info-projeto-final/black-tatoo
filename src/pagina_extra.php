@@ -129,6 +129,12 @@
         echo "Tatuagem registrada!";
         echo "<a href='perfil.php'></a>";
     }
+    elseif($operacao == 'agendar'){
+        $preco = $_POST["preco"];
+        $codigo = $_POST["codigo"];
+        $nome = $_POST["nome"];
+        $estilop = $_POST["estilo"];
+    }
     else if ($operacao == "editar") {
 
         $permiss = $_POST["permissao"];

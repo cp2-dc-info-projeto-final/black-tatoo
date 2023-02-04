@@ -23,46 +23,47 @@
     include "autentica.php";
     include "header.php";
     include "conexao.php";
-    $sql = "SELECT * FROM tatuagem;"; 
-    $res = mysqli_query($mysqli,$sql);
-    $linhas = mysqli_num_rows($res);
-    $estilos = [];
-    $precos = [];
-    for ($i = 0; $i < $linhas; $i++) {
-      $style = mysqli_fetch_array($res);
-      array_push($estilos, $style['estilo']);
-      array_push($precos, $style['preco']);
-    }
     ?>
       <h1 class="text-center">Agendamento</h1>
       <br>  
       <br>
       <center>
+        <form action="pagina_extra.php" method="post">
+        <input type="hidden" name="operacao" value="agendar">
+        <input type="hidden" name="codigo" value="<?php $_SESSION['codigo']?>">          
+      <div class="col-sm-3">  
+        <label for="data_tatto"><b>Data para tatuar:</b></label>
+      <input type="date" name="data_tatto" id="data_tatto" required>
+        </div>   
     <div class="col-sm-3 col-sm-offset-3">          
-      <label>Nome</label> 
-      <input class="form-control" type="text" name="nome" placeholder="Digite seu nome" required>  
-    </div> 
+      <label>Insira o nome do artista</label> 
+      <input class="form-control" type="text" name="nome" required>  
+    </div>
     <div class="col-sm-3">  
-      <label>Telefone</label>          
-      <input class="form-control" type="text" name="telefone" placeholder="Digite seu telefone" required> 
+      <label>telefone para contato</label>          
+      <input class="form-control" type="text" name="telefone" placeholder="123456789" required> 
     </div> 
     <div class="col-sm-3 col-sm-offset-3">         
       <label>Tatuagens</label> 
-        <??><select name="Tatuagens" class="form-control"> 
-          <option value="" selected=>Selecione um estilo de tatuagem</option> 
-          <option>PONTILHISMO - R$200,00</option> 
-          <option>OLD SCHOOL - R$250,00</option>  
-          <option>GEOMÉTRICO - R$100,00</option>  
-          <option>MINIMALISTA - R$50,00</option>  
-          <option>BLACKWORK - R$200,00</option>  
-          <option>SINGLE LINE - R$ 100,00</option>  
-          <option>GLITCH - R$150,00</option> 
-          <option>TINTA BRANCA - R$150,00</option>   
-          <option>AQUARELA - Sob consulta</option>      
-        </select>                           
+        <select name="Tatuagens" class="form-control"> 
+          <option value="" selected=>Selecione um estilo de tatuagem</option>
+          <?php    
+      $sql = "SELECT * FROM tatuagem;"; 
+      $res = mysqli_query($mysqli,$sql);
+      $linhas = mysqli_num_rows($res); 
+      for ($i = 0; $i < $linhas; $i++) {
+      $style = mysqli_fetch_array($res);
+      $a = '<option>';
+      $a .= $style['estilo'];
+      $a .= '- R$';
+      $a .= $style['preco'];
+      $a .= '</option>';
+      echo $a;
+    }?>
+        </select>
       <div class="col-sm-offset-3 col-sm-6"><br> 
-        <a href="" class="btm">Agendar</a> 
-        <a href="index.php" class="btm">Voltar</a> 
+        <input class='btm' type='submit' value='Agendar!  '> 
+        <a href="perfil.php" class="btm">Voltar</a> 
     </div>                        
    </form> 
     </div>
