@@ -16,19 +16,15 @@
 <?php include "header.php"; ?>
 
     <!-- Slide Show -->
-    <div class="w3-content w3-display-container">
-        <center> <img class="img" id="img1" src="img/tatto1.jpeg"> </center>
-        <center> <img class="img" id="img1" src="img/tatto2.jpeg"> </center>
-        <center> <img class="img" id="img1" src="img/tatto3.jpeg"> </center>
+     <div class="w3-content w3-display-container">
+        <center> <img class="img" id="img1" src="img/tatto1.png"> </center>
+        <center> <img class="img" id="img1" src="img/tatto2.png"> </center>
+        <center> <img class="img" id="img1" src="img/tatto3.png"> </center>
         <center> <img class="img" id="img1" src="img/tatto4.png"> </center>
-        <center> <img class="img" id="img1" src="img/tatto5.jpeg"> </center>
-        <center> <img class="img" id="img1" src="img/tatto6.jpeg"> </center>
-        <center> <img class="img" id="img1" src="img/tatto7.jpeg"> </center>
-        <center> <img class="img" id="img1" src="img/tatto8.png"> </center>
-        <center> <img class="img" id="img1" src="img/tatto9.jpeg"> </center>
-        <center> <img class="img" id="img1" src="img/tatto10.png"> </center>
-        <center> <img class="img" id="img1" src="img/tatto1.jpg"> </center>
-        <center> <img class="img" id="img1" src="img/tatto1.jpg"> </center>  
+        <center> <img class="img" id="img1" src="img/tatto5.png"> </center>
+        <center> <img class="img" id="img1" src="img/tatto6.png"> </center>
+        <center> <img class="img" id="img1" src="img/tatto7.png"> </center>
+        <center> <img class="img" id="img1" src="img/tatto8.png"> </center> 
     </div>
     
     <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
@@ -42,11 +38,7 @@
             <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(6)"></span>
             <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(7)"></span>
             <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(8)"></span>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(9)"></span>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(10)"></span>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(11)"></span>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(12)"></span>
-        </div>
+    </div>
 
     <script>
         var slideIndex = 1;
