@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Black-Tatoo</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/indexx.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <?php include "header.php";
@@ -14,6 +14,7 @@
     <div class="tm">
         <?php
             include "conexao.php";
+            $id = 1;
             $sql ="SELECT * FROM cliente;";
             $res = mysqli_query($mysqli,$sql);
             $linhas = mysqli_num_rows($res);
@@ -27,8 +28,8 @@
                 echo "<tr><th>Email: </th><td>" . $usuario["email"] . "</td></tr>";
                 echo "<tr><th>Permissão: </th><td> 0</td></tr>";
                 echo "<tr><th> </th></tr>";
-                echo "<tr><th><a href='#'>editar</a></th></tr>";   
-            }
+                echo "<tr><th><a href='editar.php?id=".$usuario["cod_cliente"]."&permiss=".$usuario["permissao"]."'>editar</a></th></tr>";
+                }
                 $sql ="SELECT * FROM funcionario;";
                 $res = mysqli_query($mysqli,$sql);
                 $linhas = mysqli_num_rows($res);
@@ -42,8 +43,8 @@
                     echo "<tr><th>Email: </th><td>" . $usuario["email"] . "</td></tr>";
                     echo "<tr><th>Permissão: </th><td> 2</td></tr>";
                     echo "<tr><th> </th></tr>";
-                    echo "<tr><th><a href='#'>editar</a></th></tr>";   
-            }
+                    echo "<tr><th><a href='editar.php?id=".$usuario["cod_func"]."&permiss=".$usuario["permissao"]."'>editar</a></th></tr>";
+                }
                 $sql ="SELECT * FROM administrador;";
                 $res = mysqli_query($mysqli,$sql);
                 $linhas = mysqli_num_rows($res);
@@ -58,7 +59,7 @@
                     echo "<tr><th>Email: </th><td>" . $usuario["email"] . "</td></tr>";
                     echo "<tr><th>Permissão: </th><td> 1</td></tr>";
                     echo "<tr><th> </th></tr>";
-                    echo "<tr><th><a href='#'>editar</a></th></tr>";   
+                    echo "<tr><th><a href='editar.php?id=".$usuario["cod_admin"]."&permiss=".$usuario["permissao"]."'>editar</a></th></tr>";
                 }
         ?>
     </div>

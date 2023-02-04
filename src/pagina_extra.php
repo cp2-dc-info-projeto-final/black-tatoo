@@ -6,7 +6,7 @@
         <title>Dados Cadastrados</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/indexx.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
 
     </head>
     <body>
@@ -108,39 +108,143 @@
             echo "Data de nascimento: ".$cliente["data_nasc"]."<br>";
             echo "---------------------<br>";
         }
-    }
-    else if($operacao == "editar"){
-        $cod_cliente = $_POST["cod_cliente"]; 
-        $nome = $_POST["nome"]; 
-        $email = $_POST["email"];
-        $data_nasc = $_POST["data_nasc"];
-       
+    } else if ($operacao == "editar") {
 
-        $erro = 0;
-
-        if(empty($nome) or strstr($nome, ' ') == false){
-            echo "Por favor, preencha o nome completo.<br>";
+        $permiss = $_POST["permissao"];
+        if ($permiss > 2) {
+            echo "Por favor, preencha uma permissao valida.<br>";
             $erro = 1;
+            exit;
         }
+        if ($permiss == 0) {
 
-        if(strlen($email) < 10 or strstr($email, '@') == false){
-            echo "Por favor, preencha o e-mail corretamente.<br>";
-            $erro = 1;
+            $cod_cliente = $_POST["cod_cliente"];
+            $nome = $_POST["nome"];
+            $apelido = $_POST["apelido"];
+            $email = $_POST["email"];
+            $data_nasc = $_POST["data_nasc"];
+
+
+            $erro = 0;
+
+            if (empty($nome) or strstr($nome, ' ') == false) {
+                echo "Por favor, preencha o nome completo.<br>";
+                $erro = 1;
+            }
+
+            if (strlen($email) < 10 or strstr($email, '@') == false) {
+                echo "Por favor, preencha o e-mail corretamente.<br>";
+                $erro = 1;
+            }
+
+            if (empty($data_nasc)) {
+                echo "Por favor, preencha a data.<br>";
+                $erro = 1;
+            }
+            if (empty($apelido)) {
+                echo "Por favor, preencha o apelido.<br>";
+                $erro = 1;
+            }
+            if (empty($permiss)) {
+                echo "Por favor, preencha a permissao.<br>";
+                $erro = 1;
+            }
+            if ($permiss > 2) {
+                echo "Por favor, preencha uma permissao valida.<br>";
+                $erro = 1;
+            }
+
+            if ($erro == 0) {
+                $sql = "UPDATE cliente SET  usuario = '$apelido', nome = '$nome', email = '$email', data_nasc = '$data_nasc', permissao = $permiss";
+                $sql .= "WHERE `cod_cliente` = '$cod_cliente';";
+                mysqli_query($mysqli, $sql);
+
+                echo "Cliente atualizado com sucesso!<br>";
+                echo "<a href='perfil.php'>Voltar ao perfil</a>";
+            }
         }
+        elseif($permiss == 1){
+            $cod_adm = $_POST["cod_admin"];
+            $nome = $_POST["nome"];
+            $email = $_POST["email"];
+            $data_nasc = $_POST["data_nasc"];
 
-        if(empty($data_nasc)){
-            echo "Por favor, preencha a data.<br>";
-            $erro = 1;
+            $erro = 0;
+
+            if (empty($nome) or strstr($nome, ' ') == false) {
+                echo "Por favor, preencha o nome completo.<br>";
+                $erro = 1;
+            }
+
+            if (strlen($email) < 10 or strstr($email, '@') == false) {
+                echo "Por favor, preencha o e-mail corretamente.<br>";
+                $erro = 1;
+            }
+
+            if (empty($data_nasc)) {
+                echo "Por favor, preencha a data.<br>";
+                $erro = 1;
+            }
+            if (empty($permiss)) {
+                echo "Por favor, preencha a permissao.<br>";
+                $erro = 1;
+            }
+
+            if ($erro == 0) {
+                $sql = "UPDATE administrador SET  nome = '$nome', email = '$email', data_nasc = '$data_nasc', permissao = $permiss";
+                $sql .= " WHERE `cod_admin` = '$cod_adm';";
+                mysqli_query($mysqli, $sql);
+
+                echo "Administrador atualizado com sucesso!<br>";
+                echo "<a href='perfil.php'>Voltar ao perfil</a>";
+            }
         }
+        elseif($permiss == 2){
+            $cod_fun = $_POST["cod_func"];
+            $apelido = $_POST["apelido"];
+            $nome = $_POST["nome"];
+            $cpf = $_POST["cpf"];
+            $tel = $_POST["numero"];
+            $email = $_POST["email"];
+            $data_nasc = $_POST["data_nasc"];
 
-        if($erro == 0){
-            $sql = "UPDATE cliente SET nome = '$nome', email = '$email', 
-            data_nasc = '$data_nasc'";
-            $sql .= "WHERE cod_cliente = $cod_cliente;";  
-            mysqli_query($mysqli,$sql);
+            $erro = 0;
 
-            echo "Cliente atualizado com sucesso!<br>";
-            echo "<a href='form_extra.html'>Voltar para o início</a>"; 
+            if (empty($nome) or strstr($nome, ' ') == false) {
+                echo "Por favor, preencha o nome completo.<br>";
+                $erro = 1;
+            }
+
+            if (strlen($email) < 10 or strstr($email, '@') == false) {
+                echo "Por favor, preencha o e-mail corretamente.<br>";
+                $erro = 1;
+            }
+
+            if (empty($data_nasc)) {
+                echo "Por favor, preencha a data.<br>";
+                $erro = 1;
+            }
+            if (empty($permiss)) {
+                echo "Por favor, preencha a permissao.<br>";
+                $erro = 1;
+            }
+            if (empty($cpf)) {
+                echo "Por favor, preencha a permissao.<br>";
+                $erro = 1;
+            }
+            if (empty($tel)) {
+                echo "Por favor, preencha a permissao.<br>";
+                $erro = 1;
+            }
+
+            if ($erro == 0) {
+                $sql = "UPDATE funcionario SET apelido = '$apelido', nome = '$nome', cpf = '$cpf', tel = '$tel', email = '$email', data_nasc = '$data_nasc', permissao = '$permiss'";
+                $sql .= "WHERE `cod_func` = '$cod_fun';";
+                mysqli_query($mysqli, $sql);
+
+                echo "Funcionario atualizado com sucesso!<br>";
+                echo "<a href='perfil.php'>Voltar ao perfil</a>";
+            }
         }
     }
     else if($operacao == "excluir"){
