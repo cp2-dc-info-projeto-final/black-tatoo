@@ -24,7 +24,7 @@ Ao entrar no site o cliente verá nossa página inicial composta por opções co
 "TATUAGENS" onde ele poderá conhecer nosso trabalho através de imagens
 "AGENDAMENTO" onde ele poderá agendar para fazer sua arte
 "TRABALHE CONOSCO" onde ele poderá fazer parte de nossa equipe
-"PERFIL" onde cliente poderá se cadastrar ou fazer login
+"PERFIL" onde o cliente poderá se cadastrar ou fazer login. 
 Ele poderá clicar na opção de sua preferência
 
 ![pginicial](https://user-images.githubusercontent.com/111150590/216793118-49acba5a-0170-4ff1-b35b-967e1ada2fab.png)
