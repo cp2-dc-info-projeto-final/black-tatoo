@@ -13,6 +13,7 @@
  - [CDU 09](#CDU-09): Disponibilização de horários;
  - [CDU 10](#CDU-10): Agendamento;
  - [CDU 11](#CDU-11): Sair do site;
+ - [CDU 12](#CDU-12): Logout;
 
  
 
@@ -20,7 +21,7 @@
 ## Lista dos Atores
 
  - Cliente;
- - Profissional; 
+ - Funcionários; 
  - Administrador;
 
 ## Diagrama de Casos de Uso
