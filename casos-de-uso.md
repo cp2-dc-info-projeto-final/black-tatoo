@@ -8,12 +8,12 @@
  - [CDU 04](#CDU-04): Visualizar agendamento;
  - [CDU 05](#CDU-05): Cancelar agendamento;
  - [CDU 06](#CDU-06): Excluir cliente;
- - [CDU 07](#CDU-07): Login;
+ - [CDU 07](#CDU-07): Efetuar login;
  - [CDU 08](#CDU-08): Adição de Funcionário;
  - [CDU 09](#CDU-09): Disponibilização de horários;
  - [CDU 10](#CDU-10): Agendamento;
- - [CDU 11](#CDU-11): Sair do site;
- - [CDU 12](#CDU-12): Logout;
+ - [CDU 11](#CDU-11): Logout;
+ 
 
  
 
@@ -61,7 +61,7 @@
 
 1. O sistema exibirá os horários e os profissionais cadastrados na região do cliente.
 2. O cliente irá escolher o horário e profissional de sua preferência. 
-3. O cliente irá cilcar em "Agendar".
+3. O cliente irá clicar em "Agendamento".
 4. O cliente será redirecionado para outra página com o aviso "Agendamento efetuado!". 
 ![Diagrama de Casos de Uso](Fluxo-Principal-de-Serviço.jpg)
 
@@ -69,10 +69,10 @@
 
 1. O sistema exibirá os horários e os profissionais cadastrados na região do cliente.
 2. O cliente irá escolher o horário e profissional de sua preferência. 
-3. O cliente irá clicar em "Agendar".
+3. O cliente irá clicar em "Agendamento".
 4. O sistema informará que o profissional não está disponivel.
 5. O cliente escolherá outro profissional.
-6. O cliente irá clicar em "Agendar".
+6. O cliente irá clicar em "Agendamento".
 7. O cliente será redirecionado para outra página com o aviso "Agendamento efetuado!". 
  ![Diagrama de Casos de Uso](Fluxo-Alternativo-de-Serviços.jpg)
 
@@ -211,7 +211,7 @@
 
 ![Diagrama de Casos de Uso](https://user-images.githubusercontent.com/111150590/206540182-09c09f74-6f4b-4525-8dad-1d68a81aba01.jpg)
 
-- [CDU 11](#CDU-11): Sair do site;
+- [CDU 11](#CDU-11): Logout;
 1.  O cliente selecionará "Sair"
 2.  O sistema confirmará saída
 3.  O sistema recarrega para página inicial
