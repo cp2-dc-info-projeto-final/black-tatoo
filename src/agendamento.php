@@ -21,7 +21,19 @@
   <body> 
     <?php 
     include "autentica.php";
-    include "header.php";?>
+    include "header.php";
+    include "conexao.php";
+    $sql = "SELECT * FROM tatuagem;"; 
+    $res = mysqli_query($mysqli,$sql);
+    $linhas = mysqli_num_rows($res);
+    $estilos = [];
+    $precos = [];
+    for ($i = 0; $i < $linhas; $i++) {
+      $style = mysqli_fetch_array($res);
+      array_push($estilos, $style['estilo']);
+      array_push($precos, $style['preco']);
+    }
+    ?>
       <h1 class="text-center">Agendamento</h1>
       <br>  
       <br>
@@ -36,7 +48,7 @@
     </div> 
     <div class="col-sm-3 col-sm-offset-3">         
       <label>Tatuagens</label> 
-        <select name="Tatuagens" class="form-control"> 
+        <??><select name="Tatuagens" class="form-control"> 
           <option value="" selected=>Selecione um estilo de tatuagem</option> 
           <option>PONTILHISMO - R$200,00</option> 
           <option>OLD SCHOOL - R$250,00</option>  

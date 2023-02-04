@@ -72,6 +72,12 @@
             dots[slideIndex - 1].className += " w3-white";
         }
     </script>
+    <div class="container">
+        <div class="item">
+            <br> <br>
+            <center><a href='tattos.php'>Ver mais tatuagens</a></center>
+        </div>
+    </div>
 </body>
 
 </html>

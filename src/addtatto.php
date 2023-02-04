@@ -27,7 +27,7 @@
             <input type="hidden" name="codfun" value="<?php $_SESSION['codigo']?>">
                 <br>
                 <div class="inputBox">
-                <select name="Tatuagens" class="form-control"> 
+                <select name="tatuagem" class="form-control"> 
           <option value="" selected=>Selecione um estilo de tatuagem</option> 
           <option>PONTILHISMO</option> 
           <option>OLD SCHOOL</option>  

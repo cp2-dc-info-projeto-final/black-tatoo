@@ -9,11 +9,39 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <?php include "header.php";
+    <?php
+    include "autentica.php"; 
+    include "header.php";
+    include "conexao.php";
+            $sql = "SELECT * FROM tatuagem;"; 
+            $res = mysqli_query($mysqli,$sql);
+            $linhas = mysqli_num_rows($res);
+            for($i = 0; $i < $linhas; $i++){
+            $cliente = mysqli_fetch_array($res);
+            }
     ?> 
     <div class="container">
         <div class=tm>
-            
+            <legend>Tatuagens</legend>
+            <?php 
+            $sql = "SELECT * FROM tatuagem;"; 
+            $res = mysqli_query($mysqli,$sql);
+            $linhas = mysqli_num_rows($res);
+            for($i = 0; $i < $linhas; $i++){
+            $cliente = mysqli_fetch_array($res);
+                echo $cliente['autor'];
+                echo '<br>';
+                echo $cliente['estilo'];
+                echo '<br>';
+                echo $cliente['link'];
+                echo '<br>';
+                echo 'R$'.$cliente['preco'];
+                echo '<br>';
+                echo '-------- ---- -------- ---';
+                echo '<br>';
+
+            }
+            ?>
         </div>
     </div>
 </body>

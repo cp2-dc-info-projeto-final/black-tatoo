@@ -119,6 +119,10 @@
         if (!empty($estilop)){
             $estilo = $estilop;
         }
+        if(empty($nome)){
+        $nome = $_SESSION['nome'];
+        }
+        
         $sql = "INSERT INTO tatuagem (estilo,preco,autor,link,cod_func)";
         $sql .= "VALUES ('$estilo','$preco','$nome','$link','$codfun');";
         mysqli_query($mysqli,$sql);
