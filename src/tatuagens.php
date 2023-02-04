@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/indexx.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
         <style>
             #img1{
                 height: 50vh;

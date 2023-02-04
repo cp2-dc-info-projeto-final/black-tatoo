@@ -20,10 +20,10 @@
 </head>
 <body>
 <?php include "header.php";
-    echo '<h1>Ben vindo, usuario</h1>';
-    echo '<h3>Usuario: '.$_SESSION["nome"].'</h3>';
-    echo '<a href="editar.php">Editar dados</a>';
-    echo '<a href="logout.php?cod_cliente='.$_SESSION["codigo"].'">sair</a>';
+    echo '<br><br><br><center><h1>Olá, Usuario</h1>';
+    echo '<h3>Usuario: '.$_SESSION["nome"].'</h3><br>';
+    echo '<a href="editar.php" class="btm">Editar dados</a>';
+    echo '  <a class="btm" href="logout.php?cod_cliente='.$_SESSION["codigo"].'">sair</a></center>';
 if ($_SESSION['permissao'] == 1) {
     echo '<center><br><br><a class="btm" href="lista.php">Listar usuarios</a></center>';
 }
