@@ -98,10 +98,8 @@
 **Fluxo Principal**
 
 1. O administrador e o funcionário poderão ver os agendamentos feitos pelos clientes.
-2. Na interface do administrador terá um botão "agendamentos" ao clicar ele será redirecionado para outra página.
-3. Essa página terá registros de todos os agendamentos feitos pelo sistema.
-4. Na interface do profissional terá uma mensagem "agendamentos".
-5. O administrador poderá ver seus agendamentos.
+2. Na interface do profissional terá uma mensagem "agendamentos".
+3. O administrador poderá ver seus agendamentos.
 
 ### CDU 05 Cancelar agendamento
 
