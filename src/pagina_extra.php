@@ -130,10 +130,67 @@
         echo "<a href='perfil.php'></a>";
     }
     elseif($operacao == 'agendar'){
-        $preco = $_POST["preco"];
         $codigo = $_POST["codigo"];
         $nome = $_POST["nome"];
-        $estilop = $_POST["estilo"];
+        $data = $_POST["data_tatto"];
+        $tel = $_POST["telefone"];
+        $estilo = $_POST["tatuagens"];
+
+        if(empty($nome)){
+            echo "Autor nao encontrado";
+            echo "<a href'agendamento.php'>Voltar</a>";
+            exit;
+        }
+        if(empty($codigo)){
+        $codigo = $_SESSION['codigo'];
+        }
+        $table = $_SESSION['permissao'];
+        if($table == 0){
+            $sql = "SELECT * FROM cliente WHERE cod_cliente like '$codigo';"; 
+            $res = mysqli_query($mysqli,$sql);
+            $linhas = mysqli_num_rows($res);
+            for ($i = 0; $i < $linhas; $i++) {
+                $usuario = mysqli_fetch_array($res);
+                $nome_cliente = $usuario['nome'];
+            }
+        }
+        elseif($table == 1){
+            $sql = "SELECT * FROM administrador WHERE cod_admin like '%$codigo';"; 
+            $res = mysqli_query($mysqli,$sql);
+            $linhas = mysqli_num_rows($res);
+            for ($i = 0; $i < $linhas; $i++) {
+                $usuario = mysqli_fetch_array($res);
+                $nome_cliente = $usuario['nome'];
+            }
+        }
+        elseif($table == 2){
+            $sql = "SELECT * FROM funcionario WHERE cod_func like '%$codigo';"; 
+            $res = mysqli_query($mysqli,$sql);
+            $linhas = mysqli_num_rows($res);
+            for ($i = 0; $i < $linhas; $i++) {
+                $usuario = mysqli_fetch_array($res);
+                $nome_cliente = $usuario['nome'];
+            }
+        }
+        $sql = "SELECT * FROM funcionario WHERE nome like '%$nome';"; 
+        $res = mysqli_query($mysqli,$sql);
+        $linhas = mysqli_num_rows($res);
+        if($linhas < 1){
+            echo "Autor da tatuagem nao encontrado :(";
+            echo "<a href'agendamento.php'>Voltar</a>";
+            exit;
+        }
+        else{
+        for ($i = 0; $i < $linhas; $i++) {
+            $usuario = mysqli_fetch_array($res);
+            $id = $usuario['cod_func'];
+        }
+        $sql = "INSERT INTO agendamento (autor,contato,cod_fun,data_agenda,estilo_valor,cod_cliente,nome_cliente)";
+        $sql .= "VALUES ('$nome','$tel','$id','$data','$estilo','$codigo','$nome_cliente');";
+        mysqli_query($mysqli,$sql);
+        }
+    echo "<h3> Tatuagens resgistrada.";
+    echo "<a href='perfil.php'";
     }
     else if ($operacao == "editar") {
 

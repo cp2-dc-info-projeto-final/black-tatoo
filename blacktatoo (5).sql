@@ -113,9 +113,10 @@ CREATE TABLE IF NOT EXISTS `agendamento` (
   `autor` varchar (50) NOT NULL,
   `contato` varchar(50) NOT NULL,
   `cod_fun` varchar(50) NOT NULL,
-  `data` varchar(10) NOT NULL,
+  `data_agenda` varchar(10) NOT NULL,
   `estilo_valor` varchar(30) NOT NULL,
   `cod_cliente` varchar(10) NOT NULL,
+  `nome_cliente` varchar(10) NOT NULL,
   PRIMARY KEY (`cod_agendamento`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 COMMIT;

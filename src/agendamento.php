@@ -45,7 +45,7 @@
     </div> 
     <div class="col-sm-3 col-sm-offset-3">         
       <label>Tatuagens</label> 
-        <select name="Tatuagens" class="form-control"> 
+        <select name="tatuagens" class="form-control">
           <option value="" selected=>Selecione um estilo de tatuagem</option>
           <?php    
       $sql = "SELECT * FROM tatuagem;"; 
@@ -55,7 +55,7 @@
       $style = mysqli_fetch_array($res);
       $a = '<option>';
       $a .= $style['estilo'];
-      $a .= '- R$';
+      $a .= ' - R$';
       $a .= $style['preco'];
       $a .= '</option>';
       echo $a;
