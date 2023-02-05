@@ -55,7 +55,7 @@ O cliente poderá voltar utilizando o botão "VOLTAR" que estará localizado no 
 ![login](https://user-images.githubusercontent.com/111150590/216793291-56c8c4c6-a81f-403a-8e30-79f8eca060d2.png)
 
 Recuperação de senha 
-Em caso de esquecimento, o usuário poderá recuperar a senha clicando em "RECUEPRAR SENHA" utilizando apenas o email cadastrado
+Em caso de esquecimento, o usuário poderá recuperar a senha clicando em "RECUPERAR SENHA" utilizando apenas o email cadastrado
 
 ![recsenha](https://user-images.githubusercontent.com/111150590/216794151-b35fe234-7e9e-4816-a676-41ca38709bf7.png)
 
