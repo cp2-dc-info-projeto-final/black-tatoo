@@ -81,17 +81,17 @@
 **Fluxo Principal**
 
 1. O administrador possuirá uma interface própria.
-2. Nessa interface possuirá um botão "clientes".
+2. Nessa interface possuirá um botão "Listar usuarios".
 3. O administrador clica nesse botão e será redirecionado para outra página.
-4. Essa página possuirá todos clientes cadastrados.
-5. O administrador poderá excluir cadastros.
+4. Essa página possuirá todos os usuarios cadastrados.
+5. O administrador poderá editar cadastros.
 
 **Fluxo Alternativo**
 
 1. O administrador clica no botão "clientes".
 2. O administrador seleciona um cliente.
-3. O administrador tentará excluir o cadastro.
-4. Será exibido a mensagem de que o cadastro foi cancelado.
+3. O administrador tentará editar o cadastro.
+4. Será exibido a mensagem de que o cadastro foi editado.
 
 ### CDU 04 Visualizar agendamento
 
@@ -100,8 +100,8 @@
 1. O administrador e o funcionário poderão ver os agendamentos feitos pelos clientes.
 2. Na interface do administrador terá um botão "agendamentos" ao clicar ele será redirecionado para outra página.
 3. Essa página terá registros de todos os agendamentos feitos pelo sistema.
-4. Na interface do profissional terá um botão "meus agendamentos" ao clicar ele será redirecionado para outra página.
-5. Essa página terá as datas e os hórarios que o profissinal terá que atender.
+4. Na interface do profissional terá uma mensagem "agendamentos".
+5. O administrador poderá ver seus agendamentos.
 
 ### CDU 05 Cancelar agendamento
 
