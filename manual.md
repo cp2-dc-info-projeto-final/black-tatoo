@@ -90,7 +90,7 @@ Ele poderá clicar em "ENVIAR" para confirmar login.
 ![login](https://user-images.githubusercontent.com/111150590/216793291-56c8c4c6-a81f-403a-8e30-79f8eca060d2.png)
 
 ## Editar-administrador
- Após o login,o administrador poderá editar dados clicando em "EDITAR"
+ Após o login,o administrador poderá editar dados clicando em "PERFIL" na página inicial e depois clicando em "EDITAR DADOS"
 
 ![editadm2](https://user-images.githubusercontent.com/111150590/216796225-c2af6413-d490-437c-8537-fc0692a53292.png)
 
@@ -101,7 +101,7 @@ Ele poderá editar lista de clientes ultilizando nome, idade e email.
 
 
 ## Editar-cliente
-Após o login,o cliente poderá editar seus dados clicando em "EDITAR"
+Após o login,o cliente poderá editar seus dados clicando em "PERFIL" na página inicial e depois clicando em "EDITAR DADOS" 
 
 ![editcliente2](https://user-images.githubusercontent.com/111150590/216796147-34b15089-72a2-48de-a1f0-4c7801c68a16.png)
 
