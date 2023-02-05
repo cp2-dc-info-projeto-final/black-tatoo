@@ -55,9 +55,12 @@ if ($_SESSION['permissao'] == 2) {
                 echo 'tipo:' .$usuario["estilo_valor"].'<br>';
                 if($_SESSION['permissao'] != 2){
                     echo 'Tatuador:' . $usuario['nome'].'<br>';
+                    echo '------- ----- ------<br>';
                 }
                 else{
                     echo 'Cliente:' . $usuario['nome_cliente'].'<br>';
+                    echo '------- ----- ------<br>';
+
                 }
              }  
             }   
