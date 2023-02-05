@@ -89,6 +89,12 @@ Ele poderá clicar em "ENVIAR" para confirmar login.
 
 ![login](https://user-images.githubusercontent.com/111150590/216793291-56c8c4c6-a81f-403a-8e30-79f8eca060d2.png)
 
+Após o login, o funcionário poderá registrar suas artes acessando "REGISTRAR TATUAGEM"
+
+![registatto](https://user-images.githubusercontent.com/111150590/216798103-5d510e31-7ba7-4ef8-90c1-51afd7069163.png)
+
+
+
 ## Editar-administrador
  Após o login,o administrador poderá editar dados clicando em "PERFIL" na página inicial e depois clicando em "EDITAR DADOS"
 
