@@ -211,8 +211,7 @@
 
 - [CDU 11](#CDU-11): Logout;
 1.  O cliente selecionará "Sair"
-2.  O sistema confirmará saída
-3.  O sistema recarrega para página inicial
+2.  O sistema recarrega para página inicial
 
 **Fluxo Alternativo** 
 
