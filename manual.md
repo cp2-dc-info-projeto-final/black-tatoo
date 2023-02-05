@@ -30,7 +30,7 @@ Ao entrar no site o cliente verá nossa página inicial composta por opções co
 "PERFIL", onde o cliente poderá se cadastrar ou fazer login. 
 Ele poderá clicar na opção de sua preferência
 
-![pginiciall](https://user-images.githubusercontent.com/111150590/216795468-fdf140a2-a188-42e0-9d37-ad655eee63a4.png)
+![pginiciall](https://user-images.githubusercontent.com/111150590/216796049-11c737c7-ac57-44cd-9991-b5f11e926c08.png)
 
 
 ## Cadastro 
@@ -40,6 +40,10 @@ Ele poderá clicar em "ENVIAR" para confirmar cadastro.
 O cliente poderá voltar utilizando o botão "VOLTAR" que estará localizado no canto superior esquerdo.
 
 ![cadcli](https://user-images.githubusercontent.com/111150590/216793254-b50a2ce5-0084-4a11-82f1-827fbb625a48.png)
+
+Após o cadastro ser realizado aparecerá a confirmação doe cadastro.
+
+![cadconfir](https://user-images.githubusercontent.com/111150590/216796001-7a91f47b-da9e-4c77-a6de-b0bd714e4f8a.png)
 
 
 ## Login
@@ -86,13 +90,23 @@ Ele poderá clicar em "ENVIAR" para confirmar login.
 ![login](https://user-images.githubusercontent.com/111150590/216793291-56c8c4c6-a81f-403a-8e30-79f8eca060d2.png)
 
 ## Editar-administrador
-Após o login,o administrador poderá editar a lista de clientes ultilizando nome, idade e email.
+ Após o login,o administrador poderá editar dados clicando em "EDITAR"
+
+![editadm2](https://user-images.githubusercontent.com/111150590/216796225-c2af6413-d490-437c-8537-fc0692a53292.png)
+
+
+Ele poderá editar lista de clientes ultilizando nome, idade e email.
 
 ![editadm](https://user-images.githubusercontent.com/111150590/216795380-f0a628d7-6e5d-4db6-a29a-81cf6fc38d8f.png)
 
 
 ## Editar-cliente
-Após o login,o cliente poderá editar seu nome, email e data de nascimento.
+Após o login,o cliente poderá editar seus dados clicando em "EDITAR"
+
+![editcliente2](https://user-images.githubusercontent.com/111150590/216796147-34b15089-72a2-48de-a1f0-4c7801c68a16.png)
+
+
+Ele poderá editar seu nome, email e data de nascimento. 
 
 ![editcliente](https://user-images.githubusercontent.com/111150590/216795427-4c4d3b31-a762-43a5-add7-34e834e4b241.png)
 
