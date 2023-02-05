@@ -41,7 +41,7 @@ O cliente poderá voltar utilizando o botão "VOLTAR" que estará localizado no 
 
 ![cadcli](https://user-images.githubusercontent.com/111150590/216793254-b50a2ce5-0084-4a11-82f1-827fbb625a48.png)
 
-Após o cadastro ser realizado aparecerá a confirmação doe cadastro.
+Após o cadastro ser realizado aparecerá a confirmação de cadastro.
 
 ![cadconfir](https://user-images.githubusercontent.com/111150590/216796001-7a91f47b-da9e-4c77-a6de-b0bd714e4f8a.png)
 
