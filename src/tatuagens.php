@@ -1,3 +1,6 @@
+<?php 
+  include "autentica.php";
+?>
 <html>
     <head>
         <meta charset="UTF-8">
