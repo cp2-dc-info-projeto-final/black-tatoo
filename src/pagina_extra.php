@@ -41,8 +41,26 @@
 
         $sql = "SELECT * FROM cliente WHERE email = '$email';";
         $res = mysqli_query($mysqli, $sql);
+    
+        //Testa se já existe o e-mail cadastrado
+        if(mysqli_num_rows($res) == 1){
+            echo "E-mail já cadastrado. Por favor, digite outro e-mail.<br>";
+            $erro = 1;
+        }
 
-        //testa se já existe o e-mail cadastrado
+        $sql = "SELECT * FROM funcionario WHERE email = '$email';";
+        $res = mysqli_query($mysqli, $sql);
+        
+        //Testa se já existe o e-mail cadastrado
+        if(mysqli_num_rows($res) == 1){
+            echo "E-mail já cadastrado. Por favor, digite outro e-mail.<br>";
+            $erro = 1;
+        }
+            
+        $sql = "SELECT * FROM administrador WHERE email = '$email';";
+        $res = mysqli_query($mysqli, $sql);
+            
+        //Testa se já existe o e-mail cadastrado
         if(mysqli_num_rows($res) == 1){
             echo "E-mail já cadastrado. Por favor, digite outro e-mail.<br>";
             $erro = 1;
