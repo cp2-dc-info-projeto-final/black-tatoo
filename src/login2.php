@@ -1,3 +1,6 @@
+<?php 
+     include "autentica.php";
+?>
 <?php
     // Recebe os campos do formulário
     $email = $_POST["email"];
