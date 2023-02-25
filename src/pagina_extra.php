@@ -1,6 +1,9 @@
 <?php 
         include "conexao.php";
 ?>
+<?php 
+       include "autentica.php";
+?>
 <html>
     <head>
         <title>Dados Cadastrados</title>
