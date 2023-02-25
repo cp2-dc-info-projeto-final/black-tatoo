@@ -1,3 +1,6 @@
+<?php 
+     include "autentica.php";
+?>
 <?php
 function gerar_senha($tamanho, $minuscula, $numeros, $simbolos){
 
