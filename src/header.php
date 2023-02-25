@@ -1,3 +1,6 @@
+<?php 
+    include "autentica.php";
+?>
 <header>
     <nav class="navbar navbar-expand-lg">
     <img src="img/tatoo.png" alt="">
