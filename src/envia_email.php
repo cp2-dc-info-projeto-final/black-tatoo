@@ -1,3 +1,6 @@
+<?php 
+     include "autentica.php";
+?>
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
