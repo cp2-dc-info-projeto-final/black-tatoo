@@ -208,7 +208,7 @@
         $sql .= "VALUES ('$nome','$tel','$id','$data','$estilo','$codigo','$nome_cliente');";
         mysqli_query($mysqli,$sql);
         }
-    echo "<h3> Tatuagens resgistrada.";
+    echo "<h3> Agendamento Marcado com Sucesso!";
     echo "<a href='perfil.php'";
     }
     else if ($operacao == "editar") {
