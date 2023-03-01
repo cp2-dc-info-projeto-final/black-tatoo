@@ -7,6 +7,11 @@
     <title>Black-Tatoo</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
+    <style>
+        .container{
+            background-color: none;
+        }
+    </style>
 </head>
 <body>
     <?php
@@ -18,7 +23,7 @@
         exit;
     }
     ?> 
-    <div class="container">
+    <div class="container" style="background-color: none;">
         <div class="box">
             <fieldset><legend>Registrar tatuagem</legend>
             <form action="pagina_extra.php" method="post">

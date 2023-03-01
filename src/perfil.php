@@ -15,6 +15,14 @@
             background-color: white;
             color:black;
         }
+        .container{
+            background-color: rgb(225, 225, 225, 0.9);
+            width: 100%;
+            height: 50%;
+            border-radius: 15px;
+            margin-top:5px;
+            border:1px solid #000;
+        }
     </style>
 </head>
 <body>
@@ -54,16 +62,12 @@ if ($_SESSION['permissao'] == 2) {
                 $usuario = mysqli_fetch_array($res);
                 echo 'Dia: '.$usuario["data_agenda"].'<br>';
                 echo 'Tipo: ' .$usuario["estilo_valor"].'<br>';
-                if($_SESSION['permissao'] != 0){
+                if($_SESSION['permissao'] == 2){
                     echo 'Cliente: ' . $usuario['nome_cliente'].'<br>';
                 }
                 else{
                     echo 'Tatuador: ' . $usuario['autor'].'<br>';
                 }
-                    if($_SESSION['permissao'] == 1){
-                     echo 'Tatuador: ' . $usuario['autor'].'<br>';
-                }
-            
              }  
             }   
   

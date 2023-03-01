@@ -7,13 +7,12 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-
     </head>
     <body>
-
     <?php include "header.php" ?>
+    <div class="container">
 
-        <h1>Dados Cadastrados</h1>
+    <h1>Black-Tatoo diz:
 <?php
     $operacao = $_REQUEST["operacao"];
 
@@ -434,6 +433,7 @@
 
     }
 ?>
+</div>
     </body>
 </html>
 <?php mysqli_close($mysqli); 
