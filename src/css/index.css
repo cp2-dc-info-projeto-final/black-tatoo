@@ -4,6 +4,15 @@
     color: white;
 }
 
+.container{
+    background-color: rgb(225, 225, 225, 0.9);
+    width: 100%;
+    height: 50%;
+    border-radius: 15px;
+    margin-top:5px;
+    border:1px solid #000;
+}
+
 a {
     text-decoration: none;
     color: rgb(35, 96, 4);

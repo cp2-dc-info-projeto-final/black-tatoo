@@ -13,7 +13,6 @@
     <style>
         body{
             background-color: white;
-            background-image: none;
             color:black;
         }
     </style>
