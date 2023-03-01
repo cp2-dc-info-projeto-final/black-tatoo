@@ -227,7 +227,6 @@
             $email = $_POST["email"];
             $data_nasc = $_POST["data_nasc"];
 
-
             $erro = 0;
 
             if (empty($nome) or strstr($nome, ' ') == false) {
@@ -248,10 +247,6 @@
                 echo "Por favor, preencha o apelido.<br>";
                 $erro = 1;
             }
-            if (empty($permiss)) {
-                echo "Por favor, preencha a permissao.<br>";
-                $erro = 1;
-            }
             if ($permiss > 2) {
                 echo "Por favor, preencha uma permissao valida.<br>";
                 $erro = 1;
@@ -259,7 +254,7 @@
 
             if ($erro == 0) {
                 $sql = "UPDATE cliente SET  usuario = '$apelido', nome = '$nome', email = '$email', data_nasc = '$data_nasc', permissao = $permiss";
-                $sql .= "WHERE `cod_cliente` = '$cod_cliente';";
+                $sql .= " WHERE cod_cliente = '$cod_cliente';";
                 mysqli_query($mysqli, $sql);
 
                 echo "Cliente atualizado com sucesso!<br>";
@@ -342,7 +337,7 @@
 
             if ($erro == 0) {
                 $sql = "UPDATE funcionario SET apelido = '$apelido', nome = '$nome', cpf = '$cpf', tel = '$tel', email = '$email', data_nasc = '$data_nasc', permissao = '$permiss'";
-                $sql .= "WHERE `cod_func` = '$cod_fun';";
+                $sql .= " WHERE `cod_func` = '$cod_fun';";
                 mysqli_query($mysqli, $sql);
 
                 echo "Funcionario atualizado com sucesso!<br>";
@@ -423,7 +418,7 @@
             if ($erro == 0) {
                 $senha_cript = password_hash($senha, PASSWORD_DEFAULT);
                 $sql = "INSERT INTO funcionario (apelido,nome,senha,cpf,tel,email,data_nasc,permissao)";
-                $sql .= "VALUES ('$apelid','$nome','$senha_cript', '$cpf', '$telefone', '$email', '$data_nasc','$permissao');";
+                $sql .= " VALUES ('$apelid','$nome','$senha_cript', '$cpf', '$telefone', '$email', '$data_nasc','$permissao');";
 
                 if (!mysqli_query($mysqli, $sql)) {
                     echo mysqli_error($mysqli);

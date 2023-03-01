@@ -12,7 +12,7 @@
     <?php
     include "autentica.php";
     include "header.php";
-    if ($_SESSION["permissao"] <= 0){
+    if ($_SESSION["permissao"] >= 3){
         echo "permissao negada";
         echo "<a href='perfil.php'>Voltar ao perfil";
         exit;

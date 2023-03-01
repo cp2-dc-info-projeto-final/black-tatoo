@@ -13,12 +13,6 @@
     include "autentica.php"; 
     include "header.php";
     include "conexao.php";
-            $sql = "SELECT * FROM tatuagem;"; 
-            $res = mysqli_query($mysqli,$sql);
-            $linhas = mysqli_num_rows($res);
-            for($i = 0; $i < $linhas; $i++){
-            $cliente = mysqli_fetch_array($res);
-            }
     ?> 
     <div class="container">
         <div class=tm>
