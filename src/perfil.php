@@ -22,7 +22,7 @@
 <?php
 
 include "conexao.php";
-
+include "header.php";
 ?>
 <div class="container">
     <div class="item">
@@ -61,6 +61,10 @@ if ($_SESSION['permissao'] == 2) {
                 else{
                     echo 'Tatuador: ' . $usuario['autor'].'<br>';
                 }
+                    if($_SESSION['permissao'] == 1){
+                     echo 'Tatuador: ' . $usuario['autor'].'<br>';
+                }
+            
              }  
             }   
   
