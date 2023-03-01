@@ -54,10 +54,10 @@ if ($_SESSION['permissao'] == 2) {
                 echo 'Dia:'.$usuario["data_agenda"].'<br>';
                 echo 'Tipo:' .$usuario["estilo_valor"].'<br>';
                 if($_SESSION['permissao'] != 0){
-                    echo 'Autor:' . $usuario['nome'].'<br>';
+                    echo 'Cliente:' . $usuario['nome_cliente'].'<br>';
                 }
                 else{
-                    echo 'Cliente:' . $usuario['nome_cliente'].'<br>';
+                    echo 'Autor:' . $usuario['autor'].'<br>';
                 }
              }  
             }   
