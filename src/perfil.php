@@ -51,16 +51,17 @@ if ($_SESSION['permissao'] == 2) {
                 <center></center>";
             for ($i = 0; $i < $linhas; $i++) {
                 $usuario = mysqli_fetch_array($res);
-                echo 'dia:'.$usuario["data_agenda"].'<br>';
-                echo 'tipo:' .$usuario["estilo_valor"].'<br>';
-                if($_SESSION['permissao'] != 2){
-                    echo 'Tatuador:' . $usuario['nome'].'<br>';
+                echo 'Dia:'.$usuario["data_agenda"].'<br>';
+                echo 'Tipo:' .$usuario["estilo_valor"].'<br>';
+                if($_SESSION['permissao'] != 0){
+                    echo 'Autor:' . $usuario['nome'].'<br>';
                 }
                 else{
                     echo 'Cliente:' . $usuario['nome_cliente'].'<br>';
                 }
              }  
             }   
+  
         ?>
     </div>
 </div>
