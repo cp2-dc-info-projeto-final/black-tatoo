@@ -10,6 +10,12 @@
             #img1{
                 height: 50vh;
             }
+            #moretatoo{
+                background: rgba(255, 255, 255, 0.6) /* Green background with 30% opacity */
+            }
+            #moretatoo a:hover{
+                background: rgba(255, 255, 255, 1.0) /* Green background with 30% opacity */
+            }
         </style>
     </head>
 <body>
@@ -75,7 +81,7 @@
     <div class="container">
         <div class="item">
             <br> <br>
-            <center><a href='tattos.php'>Ver mais tatuagens</a></center>
+            <center><a id="moretatoo" href='tattos.php'>Ver mais tatuagens</a></center>
         </div>
     </div>
 </body>
