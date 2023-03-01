@@ -29,11 +29,13 @@
             $linhas = mysqli_num_rows($res);
             for($i = 0; $i < $linhas; $i++){
             $cliente = mysqli_fetch_array($res);
-                echo $cliente['autor'];
+                echo 'Tatuador: ' .$cliente['autor'];
                 echo '<br>';
-                echo $cliente['estilo'];
+                echo 'Estilo: ' .$cliente['estilo'];
                 echo '<br>';
-                echo $cliente['link'];
+                echo 'Modelo de tatuagem: ' .$cliente['link'];
+                echo '<br>';
+                echo 'Nome da Tatuagem: ' .$cliente['nome'];
                 echo '<br>';
                 echo 'R$'.$cliente['preco'];
                 echo '<br>';
