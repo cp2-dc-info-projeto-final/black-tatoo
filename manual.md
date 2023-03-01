@@ -118,13 +118,13 @@ Ele poderá editar seu nome, email e data de nascimento.
 ![editcliente](https://user-images.githubusercontent.com/111150590/216795427-4c4d3b31-a762-43a5-add7-34e834e4b241.png)
 
 ## Pemissões
-Permissão 0
+Permissão 0-
 O cliente poderá utilizar essa permissão para editar seu perfil
 
-Permissão 1
+Permissão 1-
 O administrador poderá utilizar essa permissão para editar cliente e funcionário 
 
-Permissão 2
+Permissão 2-
 O funcionário poderá utilizar essa permissão para editar seu perfil 
 
 
