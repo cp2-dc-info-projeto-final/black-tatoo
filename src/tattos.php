@@ -7,6 +7,11 @@
     <title>Black-Tatoo</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
+    <style>
+        .tm{
+            width: 45%;
+        }
+    </style>
 </head>
 <body>
     <?php
@@ -35,7 +40,6 @@
                 echo '<br>';
                 echo '-------- ---- -------- ---';
                 echo '<br>';
-
             }
             ?>
         </div>

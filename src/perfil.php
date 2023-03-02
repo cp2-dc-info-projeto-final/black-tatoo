@@ -18,7 +18,7 @@
         .container{
             background-color: rgb(225, 225, 225, 0.9);
             width: 100%;
-            height: 50%;
+            height: auto;
             border-radius: 15px;
             margin-top:5px;
             border:1px solid #000;
@@ -63,7 +63,8 @@ if ($_SESSION['permissao'] == 2) {
             } else {
             echo "<br><br>
                 <center></center>";
-            for ($i = 0; $i < $linhas; $i++) {
+            
+            for ($i = 0; $i != $linhas; $i++) {
                 $usuario = mysqli_fetch_array($res);
                 echo 'Dia: '.$usuario["data_agenda"].'<br>';
                 echo 'Tipo: ' .$usuario["estilo_valor"].'<br>';
@@ -73,6 +74,7 @@ if ($_SESSION['permissao'] == 2) {
                 else{
                     echo 'Autor: ' . $usuario['autor'].'<br>';
                 }
+                echo '------------------------------<br>';
              }  
             }    
                

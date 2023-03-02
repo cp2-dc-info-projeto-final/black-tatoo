@@ -7,12 +7,32 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-
+        <style>
+        .background{
+            background-color: rgb(225, 225, 225, 0.9);
+            width: 100%;
+            height: 50%;
+            border-radius: 15px;
+            margin-top:5px;
+            border:1px solid #000;
+            display: flex;
+            flex-direction: column;
+            color:#000;
+            justify-content:center;
+            align-items:center;
+        }
+        .background a:hover{
+            color:#fff;
+        }
+        .background ::after{
+            color:#fff;
+        }
+        </style>
     </head>
     <body>
 
     <?php include "header.php" ?>
-
+<div class="background">
         <h1>Dados Cadastrados</h1>
 <?php
     $operacao = $_REQUEST["operacao"];
@@ -196,7 +216,7 @@
         $linhas = mysqli_num_rows($res);
         if($linhas < 1){
             echo "Autor da tatuagem nao encontrado :(";
-            echo "<a href'agendamento.php'>Voltar</a>";
+            echo "<a href='agendamento.php'>Voltar</a>";
             exit;
         }
         else{
@@ -208,8 +228,8 @@
         $sql .= "VALUES ('$nome','$tel','$id','$data','$estilo','$codigo','$nome_cliente');";
         mysqli_query($mysqli,$sql);
         }
-    echo "<h3> Agendamento Marcado com Sucesso!";
-    echo "<a href='perfil.php'>Voltar</a>";
+    echo "<h3> Agendamento Marcado com Sucesso!<br>";
+    echo "<cemter><a href='perfil.php'>Voltar</a></center>";
     }
     else if ($operacao == "editar") {
 
@@ -421,9 +441,9 @@
                 include "envia_email.php";
                 envia_email($email, "Criação de Usuário", "Bem vindo a BLACK TATOO STUDIO, $nome");
             }
-
     }
 ?>
+</div>
     </body>
 </html>
 <?php mysqli_close($mysqli); 
