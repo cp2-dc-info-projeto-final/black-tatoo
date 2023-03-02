@@ -7,12 +7,13 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
+
     </head>
     <body>
-    <?php include "header.php" ?>
-    <div class="container">
 
-    <h1>Black-Tatoo diz:
+    <?php include "header.php" ?>
+
+        <h1>Dados Cadastrados</h1>
 <?php
     $operacao = $_REQUEST["operacao"];
 
@@ -145,7 +146,7 @@
         $sql .= "VALUES ('$estilo','$preco','$nome','$link','$codfun');";
         mysqli_query($mysqli,$sql);
         echo "Tatuagem registrada!";
-        echo "<a href='perfil.php'></a>";
+        echo "<a href='perfil.php'>Voltar</a>";
     }
     elseif($operacao == 'agendar'){
         $codigo = $_POST["codigo"];
@@ -208,7 +209,7 @@
         mysqli_query($mysqli,$sql);
         }
     echo "<h3> Agendamento Marcado com Sucesso!";
-    echo "<a href='perfil.php'";
+    echo "<a href='perfil.php'>Voltar</a>";
     }
     else if ($operacao == "editar") {
 
@@ -350,17 +351,7 @@
         mysqli_query($mysqli,$sql);
         echo "Cliente excluído com sucesso!<br>";
         echo "<a href='form_extra.html'>Voltar para o início</a>";
-    }
-    else if($operacao == "servicos"){
-        $nome = $_POST["nome"]; 
-        $preco = $_POST["preco"];
-        
-        $sql = "INSERT INTO servicos (nome,preco) VALUES ('$nome','$preco');";  
-        mysqli_query($mysqli,$sql);
-
-            echo '<script type ="text/JavaScript">';  
-            echo 'alert("Serviço cadastrado com sucesso")';  
-            echo '</script>';
+  
     } 
     else if ($operacao == "inserir_funcionario") {
         $apelid = $_POST["apelido"];
@@ -433,7 +424,6 @@
 
     }
 ?>
-</div>
     </body>
 </html>
 <?php mysqli_close($mysqli); 

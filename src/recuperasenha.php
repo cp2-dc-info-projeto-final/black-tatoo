@@ -20,7 +20,6 @@
 </body>
 </html>
 <?php
-  include "autentica.php";
 include "conexao.php";
 include "gerars.php";
 

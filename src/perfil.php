@@ -26,16 +26,14 @@
     </style>
 </head>
 <body>
-<?php
-
+<?php include "header.php";
 include "conexao.php";
-include "header.php";
 ?>
 <div class="container">
     <div class="item">
 <?php $cod = $_SESSION['codigo'];
     echo '<br><br><br><center><h1>Olá, Usuario</h1>';
-    echo '<h3>Usuario: '.$_SESSION['nome'].'</h3><br>';
+    echo '<h3>Usuario: '.$_SESSION["nome"].'</h3><br>';
     echo '<a href="editar.php" class="btm">Editar dados</a>';
     echo '  <a class="btm" href="logout.php?cod_cliente='.$_SESSION["codigo"].'">sair</a></center>';
 if ($_SESSION['permissao'] == 1) {
@@ -62,15 +60,15 @@ if ($_SESSION['permissao'] == 2) {
                 $usuario = mysqli_fetch_array($res);
                 echo 'Dia: '.$usuario["data_agenda"].'<br>';
                 echo 'Tipo: ' .$usuario["estilo_valor"].'<br>';
-                if($_SESSION['permissao'] == 2){
+                if($_SESSION['permissao'] != 0){
                     echo 'Cliente: ' . $usuario['nome_cliente'].'<br>';
                 }
                 else{
-                    echo 'Tatuador: ' . $usuario['autor'].'<br>';
+                    echo 'Autor: ' . $usuario['autor'].'<br>';
                 }
              }  
-            }   
-  
+            }    
+               
         ?>
     </div>
 </div>
