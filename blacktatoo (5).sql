@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 01/03/2023 às 05:49
+-- Tempo de geração: 02/03/2023 às 05:09
 -- Versão do servidor: 10.4.22-MariaDB
 -- Versão do PHP: 7.4.27
 
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `administrador` (
 --
 
 INSERT INTO `administrador` (`cod_admin`, `nome`, `senha`, `email`, `data_nasc`, `permissao`) VALUES
-(1, 'black_adm', '$2y$10$wrmriMXv8TlN4k/FF3hVu.Ylz8H9navNly.n7gYFghs4Yr7IwEvRG', 'blacktatto@gmail.com', '01-01-2022', 1);
+(1, 'black adm', '$2y$10$wrmriMXv8TlN4k/FF3hVu.Ylz8H9navNly.n7gYFghs4Yr7IwEvRG', 'blacktatto@gmail.com', '2003-10-21', 1);
 
 -- --------------------------------------------------------
 
@@ -64,7 +64,14 @@ CREATE TABLE IF NOT EXISTS `agendamento` (
   `cod_cliente` varchar(10) NOT NULL,
   `nome_cliente` varchar(10) NOT NULL,
   PRIMARY KEY (`cod_agendamento`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Despejando dados para a tabela `agendamento`
+--
+
+INSERT INTO `agendamento` (`cod_agendamento`, `autor`, `contato`, `cod_fun`, `data_agenda`, `estilo_valor`, `cod_cliente`, `nome_cliente`) VALUES
+(1, 'Dango Junior', '5555555555', '2', '2023-03-21', 'PONTILHISMO - R$150', '3', 'Cliente 1');
 
 -- --------------------------------------------------------
 
@@ -82,15 +89,15 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `senha` varchar(255) NOT NULL,
   `permissao` int(50) NOT NULL,
   PRIMARY KEY (`cod_cliente`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `cliente`
 --
 
 INSERT INTO `cliente` (`cod_cliente`, `usuario`, `nome`, `email`, `data_nasc`, `senha`, `permissao`) VALUES
-(1, '', 'yago a', 'mimsay003@gmail.com', '2003-10-21', '$2y$10$BF9fPLBwNQaTC4Ab5hm5l.DRTkQ0ZfB0s8TqeLMOsnV4d4fdNuyjK', 0),
-(2, 'Cliente 1', 'Cliente 1', 'cliente1@gmail.com', '2003-10-21', '$2y$10$IPhf8HO5KGWdFyynoWcXPOwj8v9t270OvlpcD.mPFVTrqdxFbVbTy', 0);
+(1, 'Yade', 'Yago Silva', 'mimsay003@gmail.com', '2003-10-21', '$2y$10$aek/Sh905y3/r/1J0oHv9uBFzWHze9tMgQXc5e95v7v2YpV.n1ZoK', 0),
+(3, 'Ted Teddy', 'Ted Teddy', 'cliente1@gmail.com', '2003-10-21', '$2y$10$Y.NbMDGSJnlRydPBc2BWuujIOR2n0YP9BuY1EsQPhHZAc50XOS2qG', 0);
 
 -- --------------------------------------------------------
 
@@ -110,14 +117,15 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
   `data_nasc` varchar(10) NOT NULL,
   `permissao` int(50) NOT NULL,
   PRIMARY KEY (`cod_func`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Despejando dados para a tabela `funcionario`
 --
 
 INSERT INTO `funcionario` (`cod_func`, `apelido`, `nome`, `senha`, `cpf`, `tel`, `email`, `data_nasc`, `permissao`) VALUES
-(1, 'Funcionário B', 'Funcionário B', '$2y$10$MulqYRFY0AMDOfDWlxRM4OK0UsN/tJkRG77DVoG5g/rGb6alSccPC', '12345678910', '21983528612', 'funcionariob@gmail.com', '2003-10-21', 2);
+(1, 'Funcionário B', 'Funcionário B', '$2y$10$MulqYRFY0AMDOfDWlxRM4OK0UsN/tJkRG77DVoG5g/rGb6alSccPC', '12345678910', '21983528612', 'funcionariob@gmail.com', '2003-10-21', 2),
+(2, 'Dango Jr', 'Dango Junior', '$2y$10$DPrVCa./LYoPVWK/HJb6cOkjaBlo0X6b9j.vedtqBz.AxT4Rt6uWq', '0987654321', '21969974188', 'hello@gmail.com', '2003-10-21', 2);
 
 -- --------------------------------------------------------
 
