@@ -63,7 +63,7 @@ if ($_SESSION['permissao'] == 2) {
                 if($_SESSION['permissao'] != 0){
                     echo 'Cliente: ' . $usuario['nome_cliente'].'<br>';
                 }
-                if($_SESSION['permissao'] >= 1 ){
+                else{
                     echo 'Autor: ' . $usuario['autor'].'<br>';
                 }
              }  
