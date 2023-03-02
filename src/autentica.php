@@ -7,7 +7,7 @@
     $senha = $_SESSION["senha"];
     }
     if(empty($email) or empty($senha)){
-    echo"você não fez login!";
+    echo"você não fez login!<br><br>";
     echo "<p><a href='login.php'>Pagina de login</a>";
     exit;
     }
@@ -24,7 +24,7 @@
                 if (mysqli_num_rows($res) != 1) {
                     unset($_SESSION["email"]);
                     unset($_SESSION["senha"]);
-                    echo "voce não fez login";
+                    echo "voce não fez login<br<br>>";
                     echo "<p><a href='login.html'>Página de login</a></p>";
                 }
             } 
@@ -36,7 +36,7 @@
                 if (mysqli_num_rows($res) != 1) {
                     unset($_SESSION["email"]);
                     unset($_SESSION["senha"]);
-                    echo "voce não fez login";
+                    echo "voce não fez login<br><br>";
                     echo "<p><a href='login.html'>Página de login</a></p>";
                 }
             }
@@ -48,7 +48,7 @@
                 if(mysqli_num_rows($res) != 1){
                     unset($_SESSION["email"]);
                     unset($_SESSION["senha"]);
-                    echo "E-mail inválido!";
+                    echo "E-mail inválido!<br>";
                     echo "<p><a href='login.html'>Página de login</a></p>";
                 } 
             }
