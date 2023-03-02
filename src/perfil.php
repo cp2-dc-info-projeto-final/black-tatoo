@@ -22,6 +22,13 @@
             border-radius: 15px;
             margin-top:5px;
             border:1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction:column;
+        }
+        .down{
+            align
         }
     </style>
 </head>
