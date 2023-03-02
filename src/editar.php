@@ -125,7 +125,7 @@
                     <input type='hidden' name='operacao' value='editar'>
                     <input type='hidden' name='cod_cliente' value='".$e."'>
                     <input type='hidden' name='permissao' value='".$x."'>
-                    <p>Usuario: <input type='text' name='usuario' value='".$a."'></p>
+                    <p>Usuario: <input type='text' name='apelido' value='".$a."'></p>
                     <p>Nome: <input type='text' name='nome' value='".$b."'></p>
                     <p>E-mail: <input type='text' name='email' value='".$c."'></p>
                     <p>Data de Nascimento: <input type='date' name='data_nasc' value='".$d."'></p>         
