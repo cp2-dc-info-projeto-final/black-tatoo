@@ -41,7 +41,7 @@
     </div>
     <div class="col-sm-3">  
       <label>Telefone para contato</label>          
-      <input class="form-control" type="text" name="telefone" placeholder="123456789" required> 
+      <input class="form-control" type="text" name="telefone" placeholder="digite o número" required> 
     </div> 
     <div class="col-sm-3 col-sm-offset-3">         
       <label>Tatuagens</label> 

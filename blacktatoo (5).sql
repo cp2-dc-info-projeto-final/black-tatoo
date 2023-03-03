@@ -141,13 +141,13 @@ CREATE TABLE IF NOT EXISTS `tatuagem` (
 --
 
 INSERT INTO `tatuagem` (`autor`, `cod_tatto`, `estilo`, `preco`, `link`, `cod_func`) VALUES
-('Cezar', 1, 'PONTILHISMO', '150', 'assadsf', 2);
+('Funcionário B', '', 'PONTILHISMO', '150', 'assadsf', 2);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
-DROP USER IF EXISTS 'tatoo'@'localhost';
-CREATE USER IF NOT EXISTS 'tatoo'@'localhost' IDENTIFIED BY '123'; 
+ DROP USER IF EXISTS 'tatoo'@'localhost';
+CREATE USER 'tatoo'@'localhost' IDENTIFIED BY '123'; 
 GRANT ALL PRIVILEGES ON blacktatoo.* TO 'tatoo'@'localhost';
