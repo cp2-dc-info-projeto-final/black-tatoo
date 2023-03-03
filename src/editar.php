@@ -33,10 +33,14 @@
                         $d = $usuario["data_nasc"];
                         $e = $usuario["cod_cliente"];
                         $x = $usuario["permissao"];
+                        $senhaa = $usuario["senha"];
+
                     }
                     echo "<form action='pagina_extra.php' method='POST'> 
                     <input type='hidden' name='operacao' value='editar'>
                     <input type='hidden' name='cod_cliente' value='".$e."'>
+                    <input type='hidden' name='permissA' value='".$x."'>
+                    <input type='hidden' name='senhaa' value='".$senhaa."'>
                     <p>Permissao: <input type='text' name='permissao' value='".$x."'>
                     <p>Apelido: <input type='text' name='apelido' value='".$a."'></p>
                     <p>Nome: <input type='text' name='nome' value='".$b."'></p>
@@ -58,11 +62,15 @@
                         $c = $usuario["email"];
                         $d = $usuario["data_nasc"];
                         $x = $usuario["permissao"];
+                        $senhaa = $usuario["senha"];
+
                     }
                     echo "
                     <form action='pagina_extra.php' method='POST'> 
                     <input type='hidden' name='operacao' value='editar'>
                     <input type='hidden' name='cod_admin' value='".$a."'>
+                    <input type='hidden' name='permissA' value='".$x."'>
+                    <input type='hidden' name='senhaa' value='".$senhaa."'>
                     <p>Permissao: <input type='text' name='permissao' value='".$x."'>
                     <p>Nome: <input type='text' name='nome' value='".$b."'></p>
                     <p>E-mail: <input type='text' name='email' value='".$c."'></p>
@@ -86,12 +94,15 @@
                         $f = $usuario["tel"];
                         $g = $usuario["cod_func"];
                         $x = $usuario["permissao"];
+                        $senhaa = $usuario["senha"];
 
                     }
                     echo "
                     <form action='pagina_extra.php' method='POST'> 
                     <input type='hidden' name='operacao' value='editar'>
                     <input type='hidden' name='cod_func' value='".$g."'>
+                    <input type='hidden' name='permissA' value='".$x."'>
+                    <input type='hidden' name='senhaa' value='".$senhaa."'>
                     <p>Permissao: <input type='text' name='permissao' value='".$x."'>
                     <p>Apelido: <input type='text' name='apelido' value='".$a."'></p>
                     <p>Nome: <input type='text' name='nome' value='".$b."'></p>
@@ -120,12 +131,15 @@
                         $d = $usuario["data_nasc"];
                         $e = $usuario["cod_cliente"];
                         $x = $usuario["permissao"];
+                        $senhaa = $usuario["senha"];
+
                     }
                     
                     echo "<form action='pagina_extra.php' method='POST'> 
                     <input type='hidden' name='operacao' value='editar'>
                     <input type='hidden' name='cod_cliente' value='".$e."'>
-                    <input type='hidden' name='permissao' value='".$x."'>
+                    <input type='hidden' name='permissA' value='".$x."'>
+                    <input type='hidden' name='senhaa' value='".$senhaa."'>
                     <p>Usuario: <input type='text' name='apelido' value='".$a."'></p>
                     <p>Nome: <input type='text' name='nome' value='".$b."'></p>
                     <p>E-mail: <input type='text' name='email' value='".$c."'></p>
@@ -153,12 +167,16 @@
                         $c = $usuario["email"];
                         $d = $usuario["data_nasc"];
                         $x = $usuario["permissao"];
+                        $senhaa = $usuario["senha"];
+
 
                     }
                     echo "
                     <form action='pagina_extra.php' method='POST'> 
                     <input type='hidden' name='operacao' value='editar'>
                     <input type='hidden' name='cod_admin' value='".$a."'>
+                    <input type='hidden' name='permissA' value='".$x."'>
+                    <input type='hidden' name='senhaa' value='".$senhaa."'>
                     <p>Permissao: <input type='text' name='permissao' value='".$x."'>
                     <p>Nome: <input type='text' name='nome' value='".$b."'></p>
                     <p>E-mail: <input type='text' name='email' value='".$c."'></p>
@@ -182,13 +200,15 @@
                         $f = $usuario["tel"];
                         $g = $usuario["cod_func"];
                         $x = $usuario["permissao"];
+                        $senhaa = $usuario["senha"];
 
                     }
                     echo "
                     <form action='pagina_extra.php' method='POST'> 
                     <input type='hidden' name='operacao' value='editar'>
                     <input type='hidden' name='cod_func' value='".$g."'>
-                    <input type='hidden' name='permissao' value='".$x."'>
+                    <input type='hidden' name='permissA' value='".$x."'>
+                    <input type='hidden' name='senhaa' value='".$senhaa."'>
                     <p>Apelido: <input type='text' name='apelido' value='".$a."'></p>
                     <p>Nome: <input type='text' name='nome' value='".$b."'></p>
                     <p>CPF: <input type='text' name='cpf' value='".$e."'></p>

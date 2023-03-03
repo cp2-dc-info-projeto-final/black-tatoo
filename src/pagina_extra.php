@@ -219,14 +219,24 @@
     echo "<cemter><a href='perfil.php'>Voltar</a></center>";
     }
     else if ($operacao == "editar") {
-
-        $permiss = $_POST["permissao"];
+        if(!(isset($_POST['permissao']))){
+            $origem = $_POST["permissA"];
+            $permiss = $origem;
+        }
+        else{
+            $permiss = $_POST["permissao"];
+            $origem = $_POST["permissA"];
+            if(empty($permiss)){
+                $permiss = $origem;
+            }
+        }
+        $senha_cript = $_POST['senhaa'];
         if ($permiss > 2) {
             echo "Por favor, preencha uma permissao valida.<br>";
             $erro = 1;
             exit;
         }
-        if ($permiss == 0) {
+        if ($origem == 0) {
 
             $cod_cliente = $_POST["cod_cliente"];
             $nome = $_POST["nome"];
@@ -260,15 +270,41 @@
             }
 
             if ($erro == 0) {
-                $sql = "UPDATE cliente SET  usuario = '$apelido', nome = '$nome', email = '$email', data_nasc = '$data_nasc', permissao = $permiss";
-                $sql .= " WHERE cod_cliente = '$cod_cliente';";
-                mysqli_query($mysqli, $sql);
+                if($origem == $permiss){
+                    $sql = "UPDATE cliente SET  usuario = '$apelido', nome = '$nome', email = '$email', data_nasc = '$data_nasc', permissao = $permiss";
+                    $sql .= " WHERE cod_cliente = '$cod_cliente';";
+                    mysqli_query($mysqli, $sql);
 
-                echo "Cliente atualizado com sucesso!<br>";
-                echo "<a href='perfil.php'>Voltar ao perfil</a>";
+                    echo "Cliente atualizado com sucesso!<br>";
+                    echo "<a href='perfil.php'>Voltar ao perfil</a>";
+                }
+                else{
+                    $sql = "DELETE FROM cliente WHERE cod_cliente LIKE '%$cod_cliente%';";
+                    mysqli_query($mysqli, $sql);
+                    if($permiss == 1){
+                        $sql = "INSERT INTO administrador (nome,email,senha,data_nasc,permissao)";
+                        $sql .= "VALUES ('$nome','$email','$senha_cript','$data_nasc','$permiss');";
+                        mysqli_query($mysqli, $sql);
+                    }
+                    elseif($permiss == 2){
+                        $sql = "INSERT INTO funcionario (apelido,nome,email,senha,data_nasc,permissao)";
+                        $sql .= "VALUES ('$apelido','$nome','$email','$senha_cript','$data_nasc','$permiss');";
+                        mysqli_query($mysqli, $sql);
+                        $sql ="SELECT * FROM agendamento WHERE cod_cliente LIKE '%$cod_cliente%';";
+                        $res = mysqli_query($mysqli,$sql);
+                        if(mysqli_num_rows($res) != 0){
+                            $sql = "DELETE FROM agendamento WHERE cod_cliente LIKE '%$cod_cliente%';";
+                            mysqli_query($mysqli, $sql);
+                        }
+                    }
+                    session_start();
+                    $_SESSION = array();
+                    session_destroy();
+                    header("Location: index.php"); 
+                }
             }
         }
-        elseif($permiss == 1){
+        elseif($origem == 1){
             $cod_adm = $_POST["cod_admin"];
             $nome = $_POST["nome"];
             $email = $_POST["email"];
@@ -296,15 +332,41 @@
             }
 
             if ($erro == 0) {
-                $sql = "UPDATE administrador SET  nome = '$nome', email = '$email', data_nasc = '$data_nasc', permissao = $permiss";
-                $sql .= " WHERE `cod_admin` = '$cod_adm';";
-                mysqli_query($mysqli, $sql);
+                if($origem == $permiss){
+                    $sql = "UPDATE administrador SET  nome = '$nome', email = '$email', data_nasc = '$data_nasc', permissao = $permiss";
+                    $sql .= " WHERE `cod_admin` = '$cod_adm';";
+                    mysqli_query($mysqli, $sql);
 
-                echo "Administrador atualizado com sucesso!<br>";
-                echo "<a href='perfil.php'>Voltar ao perfil</a>";
+                    echo "Administrador atualizado com sucesso!<br>";
+                    echo "<a href='perfil.php'>Voltar ao perfil</a>";
+                }
+                else{
+                    $sql = "DELETE FROM administrador WHERE cod_admin LIKE '%$cod_adm%';";
+                    mysqli_query($mysqli, $sql);
+                    if($permiss == 0){
+                        $sql = "INSERT INTO cliente (usuario,nome,email,senha,data_nasc,permissao)";
+                        $sql .= "VALUES ('$nome','$nome','$email','$senha_cript','$data_nasc','$permiss');";
+                        mysqli_query($mysqli, $sql);
+                    }
+                    elseif($permiss == 2){
+                        $sql = "INSERT INTO funcionario (apelido,nome,email,senha,data_nasc,permissao)";
+                        $sql .= "VALUES ('$nome','$nome','$email','$senha_cript','$data_nasc','$permiss');";
+                        mysqli_query($mysqli, $sql);
+                        $sql ="SELECT * FROM agendamento WHERE cod_cliente LIKE '%$cod_adm%';";
+                        $res = mysqli_query($mysqli,$sql);
+                        if(mysqli_num_rows($res) != 0){
+                            $sql = "DELETE FROM agendamento WHERE cod_cliente LIKE '%$cod_adm%';";
+                            mysqli_query($mysqli, $sql);
+                        }
+                    }
+                    session_start();
+                    $_SESSION = array();
+                    session_destroy();
+                    header("Location: index.php"); 
+                }
             }
         }
-        elseif($permiss == 2){
+        elseif($origem == 2){
             $cod_fun = $_POST["cod_func"];
             $apelido = $_POST["apelido"];
             $nome = $_POST["nome"];
@@ -343,12 +405,44 @@
             }
 
             if ($erro == 0) {
-                $sql = "UPDATE funcionario SET apelido = '$apelido', nome = '$nome', cpf = '$cpf', tel = '$tel', email = '$email', data_nasc = '$data_nasc', permissao = '$permiss'";
-                $sql .= " WHERE `cod_func` = '$cod_fun';";
-                mysqli_query($mysqli, $sql);
+                if($origem == $permiss){
+                    $sql = "UPDATE funcionario SET apelido = '$apelido', nome = '$nome', cpf = '$cpf', tel = '$tel', email = '$email', data_nasc = '$data_nasc', permissao = '$permiss'";
+                    $sql .= " WHERE `cod_func` = '$cod_fun';";
+                    mysqli_query($mysqli, $sql);
 
-                echo "Funcionario atualizado com sucesso!<br>";
-                echo "<a href='perfil.php'>Voltar ao perfil</a>";
+                    echo "Funcionario atualizado com sucesso!<br>";
+                    echo "<a href='perfil.php'>Voltar ao perfil</a>";
+                }
+                else{
+                    $sql = "DELETE FROM funcionario WHERE cod_func LIKE '%$cod_fun%';";
+                    mysqli_query($mysqli, $sql);
+                    if($permiss == 0){
+                        $sql = "INSERT INTO cliente (usuario,nome,email,senha,data_nasc,permissao)";
+                        $sql .= "VALUES ('$apelido','$nome','$email','$senha_cript','$data_nasc','$permiss');";
+                        mysqli_query($mysqli, $sql);
+                    }
+                    elseif($permiss == 1){
+                        $sql = "INSERT INTO administrador (nome,email,senha,data_nasc,permissao)";
+                        $sql .= "VALUES ('$nome','$email','$senha_cript','$data_nasc','$permiss');";
+                        mysqli_query($mysqli, $sql);
+                    }
+                    $sql ="SELECT * FROM tatuagem WHERE cod_func LIKE '%$cod_fun%';";
+                    $res = mysqli_query($mysqli,$sql);
+                    if(mysqli_num_rows($res) != 0){
+                        $sql = "DELETE FROM tatuagem WHERE cod_func LIKE '%$cod_fun%';";
+                        mysqli_query($mysqli,$sql);
+                    }
+                    $sql ="SELECT * FROM agendamento WHERE cod_fun LIKE '%$cod_fun%';";
+                    $res = mysqli_query($mysqli,$sql);
+                    if(mysqli_num_rows($res) != 0){
+                        $sql = "DELETE FROM agendamento WHERE cod_fun LIKE '%$cod_fun%';";
+                        mysqli_query($mysqli,$sql);
+                    }
+                    session_start();
+                    $_SESSION = array();
+                    session_destroy();
+                    header("Location: index.php"); 
+                }
             }
         }
     }
@@ -391,16 +485,16 @@
         
             $sql = "DELETE FROM funcionario WHERE cod_func LIKE '%$id%';";
             mysqli_query($mysqli,$sql);
-            $sql ="SELECT * FROM agendamento WHERE cod_fun LIKE '%$id%';";
-            $res = mysqli_query($mysqli,$sql);
-            if(mysqli_num_rows($res) != 0){
-                $sql = "DELETE FROM agendamento WHERE cod_fun LIKE '%$id%';";
-                mysqli_query($mysqli,$sql);
-            }
             $sql ="SELECT * FROM tatuagem WHERE cod_func LIKE '%$id%';";
             $res = mysqli_query($mysqli,$sql);
             if(mysqli_num_rows($res) != 0){
                 $sql = "DELETE FROM tatuagem WHERE cod_func LIKE '%$id%';";
+                mysqli_query($mysqli,$sql);
+            }
+            $sql ="SELECT * FROM agendamento WHERE cod_fun LIKE '%$id%';";
+            $res = mysqli_query($mysqli,$sql);
+            if(mysqli_num_rows($res) != 0){
+                $sql = "DELETE FROM agendamento WHERE cod_fun LIKE '%$id%';";
                 mysqli_query($mysqli,$sql);
             }
             session_start();
