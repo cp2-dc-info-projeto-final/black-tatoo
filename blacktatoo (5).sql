@@ -131,7 +131,6 @@ CREATE TABLE IF NOT EXISTS `tatuagem` (
   `cod_tatto` int(50) NOT NULL AUTO_INCREMENT,
   `estilo` varchar(50) NOT NULL,
   `preco` varchar(50) NOT NULL,
-  `nome` varchar(50) NOT NULL,
   `link` varchar(600) NOT NULL,
   `cod_func` int(50) NOT NULL,
   PRIMARY KEY (`cod_tatto`)
@@ -141,8 +140,8 @@ CREATE TABLE IF NOT EXISTS `tatuagem` (
 -- Despejando dados para a tabela `tatuagem`
 --
 
-INSERT INTO `tatuagem` (`autor`, `cod_tatto`, `estilo`, `preco`, `nome`, `link`, `cod_func`) VALUES
-('Cezar', 1, 'PONTILHISMO', '150', 'A BRABA', 'assadsf', 2);
+INSERT INTO `tatuagem` (`autor`, `cod_tatto`, `estilo`, `preco`, `link`, `cod_func`) VALUES
+('Cezar', '', 'PONTILHISMO', '150', 'assadsf', 2);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
