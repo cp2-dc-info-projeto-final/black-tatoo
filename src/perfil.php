@@ -53,31 +53,51 @@ if ($_SESSION['permissao'] == 2) {
     </div>
     <div class="item">
         <?php
-            $sql ="SELECT * FROM agendamento WHERE cod_cliente LIKE '$cod';";
+            if($_SESSION['permissao'] == 2){
+            $sql ="SELECT * FROM agendamento WHERE cod_fun = '$cod';";
             $res = mysqli_query($mysqli,$sql);
             $linhas = mysqli_num_rows($res);
-            if($linhas < 1 ){
+                if($linhas <= 0 ){
+                    echo "<br><br>
+                    <center><h3>Nenhuma tatuagem agendada</h3></center>";
+                    exit;
+                }
+                else {
                 echo "<br><br>
-                <center><h3>Nenhuma tatuagem agendada</h3></center>";
-                exit;
-            } else {
-            echo "<br><br>
-                <center></center>";
-            
-            for ($i = 0; $i != $linhas; $i++) {
-                $usuario = mysqli_fetch_array($res);
-                echo 'Dia: '.$usuario["data_agenda"].'<br>';
-                echo 'Tipo: ' .$usuario["estilo_valor"].'<br>';
-                if($_SESSION['permissao'] != 0){
-                    echo 'Cliente: ' . $usuario['nome_cliente'].'<br>';
+                    <center></center>";
+                
+                    for ($i = 0; $i != $linhas; $i++) {
+                        $usuario = mysqli_fetch_array($res);
+                        echo 'Dia: '.$usuario["data_agenda"].'<br>';
+                        echo 'Tipo: ' .$usuario["estilo_valor"].'<br>';
+                        echo 'Cliente: ' . $usuario['nome_cliente'].'<br>';
+                        echo '------------------------------<br>';
+                    }  
+                }    
+            }
+
+            else{
+            $sql ="SELECT * FROM agendamento WHERE cod_cliente = '$cod';";
+            $res = mysqli_query($mysqli,$sql);
+            $linhas = mysqli_num_rows($res);
+                if($linhas <= 0 ){
+                    echo "<br><br>
+                    <center><h3>Nenhuma tatuagem agendada</h3></center>";
+                    exit;
                 }
-                else{
-                    echo 'Autor: ' . $usuario['autor'].'<br>';
-                }
-                echo '------------------------------<br>';
-             }  
-            }    
-               
+                else {
+                echo "<br><br>
+                    <center></center>";
+                
+                    for ($i = 0; $i != $linhas; $i++) {
+                        $usuario = mysqli_fetch_array($res);
+                        echo 'Dia: '.$usuario["data_agenda"].'<br>';
+                        echo 'Tipo: ' .$usuario["estilo_valor"].'<br>';
+                        echo 'Tatuador: ' . $usuario['autor'].'<br>';
+                        echo '------------------------------<br>';
+                    }  
+                }        
+            }
         ?>
     </div>
 </div>

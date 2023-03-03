@@ -135,19 +135,6 @@
             echo "---------------------<br>";
         }
     }
-    else if($operacao == "buscar"){
-        $nome = $_POST["nome"];
-        $sql = "SELECT * FROM cliente WHERE nome like '%$nome%';"; 
-        $res = mysqli_query($mysqli,$sql);
-        $linhas = mysqli_num_rows($res);
-        for($i = 0; $i < $linhas; $i++){
-            $cliente = mysqli_fetch_array($res);
-            echo "Nome: ".$cliente["nome"]."<br>";
-            echo "E-mail: ".$cliente["email"]."<br>";
-            echo "Data de nascimento: ".$cliente["data_nasc"]."<br>";
-            echo "---------------------<br>";
-        }
-    }
     elseif($operacao == "adicionar_tatto"){
         $preco = $_POST["preco"];
         $estilo = $_POST["tatuagem"];
@@ -373,6 +360,12 @@
        
             $sql = "DELETE FROM cliente WHERE cod_cliente LIKE '%$id%';";
             mysqli_query($mysqli, $sql);
+            $sql ="SELECT * FROM agendamento WHERE cod_cliente LIKE '%$id%';";
+            $res = mysqli_query($mysqli,$sql);
+            if(mysqli_num_rows($res) != 0){
+                $sql = "DELETE FROM agendamento WHERE cod_cliente LIKE '%$id%';";
+                mysqli_query($mysqli, $sql);
+            }
             session_start();
             $_SESSION = array();
             session_destroy();
@@ -383,6 +376,12 @@
        
             $sql = "DELETE FROM administrador WHERE cod_admin LIKE '%$id%';";
             mysqli_query($mysqli, $sql);
+            $sql ="SELECT * FROM agendamento WHERE cod_cliente LIKE '%$id%';";
+            $res = mysqli_query($mysqli,$sql);
+            if(mysqli_num_rows($res) != 0){
+                $sql = "DELETE FROM agendamento WHERE cod_cliente LIKE '%$id%';";
+                mysqli_query($mysqli, $sql);
+            }
             session_start();
             $_SESSION = array();
             session_destroy();
@@ -390,9 +389,20 @@
         }
         if ($permiss == 2){
         
-       
             $sql = "DELETE FROM funcionario WHERE cod_func LIKE '%$id%';";
-            mysqli_query($mysqli, $sql);
+            mysqli_query($mysqli,$sql);
+            $sql ="SELECT * FROM agendamento WHERE cod_fun LIKE '%$id%';";
+            $res = mysqli_query($mysqli,$sql);
+            if(mysqli_num_rows($res) != 0){
+                $sql = "DELETE FROM agendamento WHERE cod_fun LIKE '%$id%';";
+                mysqli_query($mysqli,$sql);
+            }
+            $sql ="SELECT * FROM tatuagem WHERE cod_func LIKE '%$id%';";
+            $res = mysqli_query($mysqli,$sql);
+            if(mysqli_num_rows($res) != 0){
+                $sql = "DELETE FROM tatuagem WHERE cod_func LIKE '%$id%';";
+                mysqli_query($mysqli,$sql);
+            }
             session_start();
             $_SESSION = array();
             session_destroy();
@@ -416,7 +426,7 @@
         $erro = 0;
 
             if (empty($nome) or strstr($nome, ' ') == false) {
-                echo "Por favor, preencha o nome completo.<br>";
+                echo "Por favor, preencha o nome completo e com espaços.<br>";
                 $erro = 1;
             }
 
