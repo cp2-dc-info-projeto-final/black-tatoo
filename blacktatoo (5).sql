@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `tatuagem` (
   `estilo` varchar(50) NOT NULL,
   `preco` varchar(50) NOT NULL,
   `nome` varchar(50) NOT NULL,
-  `link` varchar(255) NOT NULL,
+  `link` varchar(600) NOT NULL,
   `cod_func` int(50) NOT NULL,
   PRIMARY KEY (`cod_tatto`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
